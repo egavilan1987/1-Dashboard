@@ -1,21 +1,15 @@
 To Do: 
 
--Research
-	*datatable
-		-https://datatables.net/examples/styling/bootstrap4.html
-	*How users management update and view their information
+Home to do
 
--Code
-	*Study the script code
-	*Study the users code
-	*Code the Users form validation
+(1) Do the last resumes review and update and send it. 
 
--Create tab logo
-	*An EGD picture and add it to file folder
+Coding
+Add the tab logo to the side.
 
-
-Amazon prime
+(2) Amazon prime
 	*Ask for refund
+
 --------------------------------------------
 On my Job To Do List
 1-English
