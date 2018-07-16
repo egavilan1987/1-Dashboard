@@ -155,4 +155,95 @@
     }
   
   }
+   function check_email() {
+    
+    var username_length = $("#user").val().length;
+    
+    if( $.trim( $('#user').val() ) == '' ){
+      $("#username_error_message").html("Input is blank!");
+      user.style.border = "1px solid red";
+    } else if (username_length < 5 || username_length > 20) {
+      $("#username_error_message").html("Should be between 5-20 characters");
+      user.style.border = "1px solid red";
+      $("#username_error_message").show();
+      error_username = true;
+    } else {
+      $("#username_error_message").hide();
+      user.style.border = "1px solid #ccc";
+    }
+  
+  }
+   function check_employee() {
+    
+    var username_length = $("#user").val().length;
+    
+    if( $.trim( $('#user').val() ) == '' ){
+      $("#username_error_message").html("Input is blank!");
+      user.style.border = "1px solid red";
+    } else if (username_length < 5 || username_length > 20) {
+      $("#username_error_message").html("Should be between 5-20 characters");
+      user.style.border = "1px solid red";
+      $("#username_error_message").show();
+      error_username = true;
+    } else {
+      $("#username_error_message").hide();
+      user.style.border = "1px solid #ccc";
+    }
+  
+  }
+   function check_gender() {
+    
+    var username_length = $("#user").val().length;
+    
+    if( $.trim( $('#user').val() ) == '' ){
+      $("#username_error_message").html("Input is blank!");
+      user.style.border = "1px solid red";
+    } else if (username_length < 5 || username_length > 20) {
+      $("#username_error_message").html("Should be between 5-20 characters");
+      user.style.border = "1px solid red";
+      $("#username_error_message").show();
+      error_username = true;
+    } else {
+      $("#username_error_message").hide();
+      user.style.border = "1px solid #ccc";
+    }
+  
+  }
+   function check_password() {
+    
+    var username_length = $("#user").val().length;
+    
+    if( $.trim( $('#user').val() ) == '' ){
+      $("#username_error_message").html("Input is blank!");
+      user.style.border = "1px solid red";
+    } else if (username_length < 5 || username_length > 20) {
+      $("#username_error_message").html("Should be between 5-20 characters");
+      user.style.border = "1px solid red";
+      $("#username_error_message").show();
+      error_username = true;
+    } else {
+      $("#username_error_message").hide();
+      user.style.border = "1px solid #ccc";
+    }
+  
+  }
+   function check_password_confirmation() {
+    
+    var username_length = $("#user").val().length;
+    
+    if( $.trim( $('#user').val() ) == '' ){
+      $("#username_error_message").html("Input is blank!");
+      user.style.border = "1px solid red";
+    } else if (username_length < 5 || username_length > 20) {
+      $("#username_error_message").html("Should be between 5-20 characters");
+      user.style.border = "1px solid red";
+      $("#username_error_message").show();
+      error_username = true;
+    } else {
+      $("#username_error_message").hide();
+      user.style.border = "1px solid #ccc";
+    }
+  
+  }
+ 
 </script>
