@@ -122,7 +122,21 @@
   $("#user").focusout(function() {
       check_username();
   });
-
+   $("#email").focusout(function() {
+      check_email();
+  });
+   $("#employee").focusout(function() {
+      check_employee();
+  });
+   $("#gender").focusout(function() {
+      check_gender();
+  });
+    $("#password").focusout(function() {
+      check_password();
+  });
+    $("#password_confirmation").focusout(function() {
+      check_password_confirmation();
+  });
   function check_username() {
     
     var username_length = $("#user").val().length;
