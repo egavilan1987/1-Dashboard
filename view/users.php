@@ -14,6 +14,8 @@
         <li class="breadcrumb-item active">Users</li>
       </ol>
       <span class="btn btn-primary" data-toggle="modal" data-target="#addUserModal">+ Add New User</span>
+      <a href="addUsers.php" class="btn btn-success" role="button" aria-pressed="true"><span class="fa fa-user-plus"></span>Add New User</a>
+
       <br>
       <br>
       <!-- Example DataUsers Card-->
