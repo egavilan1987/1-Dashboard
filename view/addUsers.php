@@ -41,12 +41,13 @@
                   <div class="col-xs-12 col-sm-6 col-md-6">
                     <div class="form-group">
                       <input type="text" name="email" id="email" class="form-control input-lg" placeholder="E-mail*" tabindex="2">
+                      <div id="email_error_message" style="color:red"></div>
                     </div>
                   </div>
                 </div>
                 <div class="form-group">
                   <input type="text" name="employee" id="employee" class="form-control input-lg" placeholder="Employee Name*" tabindex="3">
-                  <div>Error</div>
+                  <div id="employee_error_message" style="color:red"></div>
                 </div>
                 <div class="form-group">
                   <select name="gender" id="gender" class="form-control">
@@ -54,19 +55,19 @@
                     <option>Admin</option>
                     <option>User</option>
                   </select>
-                  <div>Error</div>
+                  <div id="gender_error_message" style="color:red"></div>
                 </div>
                 <div class="row">
                   <div class="col-xs-12 col-sm-6 col-md-6">
                     <div class="form-group">
                       <input type="password" name="password" id="password" class="form-control input-lg" placeholder="Password*" tabindex="5">
-                      <div>Error</div>
+                      <div id="password_error_message" style="color:red"></div>
                     </div>
                   </div>
                   <div class="col-xs-12 col-sm-6 col-md-6">
                     <div class="form-group">
                       <input type="password" name="password_confirmation" id="password_confirmation" class="form-control input-lg" placeholder="Confirm Password*" tabindex="6">
-                      <div>Error</div>
+                      <div id="password_confirmation_error_message" style="color:red"></div>
                     </div>
                   </div>
                 </div>
