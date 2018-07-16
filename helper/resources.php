@@ -41,4 +41,4 @@ users
 id_user
 user_name
 password
-user_role
+user_role 
