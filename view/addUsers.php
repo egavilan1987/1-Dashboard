@@ -158,55 +158,55 @@
   }
    function check_email() {
     
-    var username_length = $("#user").val().length;
+    var email_length = $("#email").val().length;
     
-    if( $.trim( $('#user').val() ) == '' ){
-      $("#username_error_message").html("Input is blank!");
-      user.style.border = "1px solid red";
-    } else if (username_length < 5 || username_length > 20) {
-      $("#username_error_message").html("Should be between 5-20 characters");
-      user.style.border = "1px solid red";
-      $("#username_error_message").show();
-      error_username = true;
+    if( $.trim( $('#email').val() ) == '' ){
+      $("#email_error_message").html("Input is blank!");
+      email.style.border = "1px solid red";
+    } else if (email_length < 5 || email_length > 20) {
+      $("#email_error_message").html("Should be between 5-20 characters");
+      email.style.border = "1px solid red";
+      $("#email_error_message").show();
+      error_email = true;
     } else {
-      $("#username_error_message").hide();
-      user.style.border = "1px solid #ccc";
+      $("#email_error_message").hide();
+      email.style.border = "1px solid #ccc";
     }
   
   }
    function check_employee() {
     
-    var username_length = $("#user").val().length;
+    var employee_length = $("#employee").val().length;
     
-    if( $.trim( $('#user').val() ) == '' ){
-      $("#username_error_message").html("Input is blank!");
-      user.style.border = "1px solid red";
-    } else if (username_length < 5 || username_length > 20) {
-      $("#username_error_message").html("Should be between 5-20 characters");
-      user.style.border = "1px solid red";
-      $("#username_error_message").show();
-      error_username = true;
+    if( $.trim( $('#employee').val() ) == '' ){
+      $("#employee_error_message").html("Input is blank!");
+      employee.style.border = "1px solid red";
+    } else if (employee_length < 5 || employee_length > 20) {
+      $("#employee_error_message").html("Should be between 5-20 characters");
+      employee.style.border = "1px solid red";
+      $("#employee_error_message").show();
+      error_employee = true;
     } else {
-      $("#username_error_message").hide();
-      user.style.border = "1px solid #ccc";
+      $("#employee_error_message").hide();
+      employee.style.border = "1px solid #ccc";
     }
   
   }
    function check_gender() {
     
-    var username_length = $("#user").val().length;
+    var gender_length = $("#gender").val().length;
     
-    if( $.trim( $('#user').val() ) == '' ){
-      $("#username_error_message").html("Input is blank!");
-      user.style.border = "1px solid red";
-    } else if (username_length < 5 || username_length > 20) {
-      $("#username_error_message").html("Should be between 5-20 characters");
-      user.style.border = "1px solid red";
-      $("#username_error_message").show();
-      error_username = true;
+    if( $.trim( $('#gender').val() ) == '' ){
+      $("#gender_error_message").html("Input is blank!");
+      gender.style.border = "1px solid red";
+    } else if (gender_length < 5 || gender_length > 20) {
+      $("#gender_error_message").html("Should be between 5-20 characters");
+      gender.style.border = "1px solid red";
+      $("#gendere_error_message").show();
+      error_gender = true;
     } else {
-      $("#username_error_message").hide();
-      user.style.border = "1px solid #ccc";
+      $("#gender_error_message").hide();
+      gender.style.border = "1px solid #ccc";
     }
   
   }
