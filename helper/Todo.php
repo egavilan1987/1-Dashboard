@@ -1,14 +1,14 @@
 To Do: 
 
-Home to do
+BECAUSE TODAY WE ARE USING A NEW SYSTEM IN MY JOBPLACE MAYBE THERE WILL NOT BE TIME FOR CODING.
 
-(1) Do the last resumes review and update and send it. 
+(1) Check the resumes
 
 Coding
-Add the tab logo to the side.
+	*Check the today code.
+	*Check the whole code.
+	*Study Sales and Inventory Sales code.
 
-(2) Amazon prime
-	*Ask for refund
 
 --------------------------------------------
 On my Job To Do List
