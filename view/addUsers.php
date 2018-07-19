@@ -96,8 +96,10 @@ $(function() {
   var error_password = false;
   var error_retype_password = false;
   
+  var Empties =  true;
 
   $("#user").focusout(function() {
+      Empties = false;
       check_username();
     });
    $("#email").focusout(function() {
@@ -234,7 +236,10 @@ $(function() {
       if(error_username != false && error_email != false && error_employee != false && error_role != false && error_password != false && error_retype_password != false) {
         alertify.alert("NOT GOOD TO GO!");
         return false;
-        }else{
+        }else if(Empties = false;){
+        alertify.alert("You must fill all of the fields!");
+        return false;
+        }else (){
           alertify.success("User successfuly!");
           data=$('#frmUsers').serialize();
         $.ajax({
