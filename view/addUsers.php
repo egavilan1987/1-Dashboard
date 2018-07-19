@@ -224,7 +224,6 @@ $(function() {
       $("#password_confirmation_error_message").show();
       error_retype_password = true;
       password_confirmation.style.border = "1px solid red";
-      error_retype_password = true;
     } else {
       $("#password_confirmation_error_message").hide();
       error_retype_password = false;
