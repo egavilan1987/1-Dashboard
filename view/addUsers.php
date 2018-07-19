@@ -237,8 +237,8 @@ $(function() {
         alertify.alert("NOT GOOD TO GO!");
         return false;
         }else if(Empties = false;){
-        alertify.alert("You must fill all of the fields!");
-        return false;
+						   alertify.alert("You must fill all of the fields!");
+						   return false;
         }else (){
           alertify.success("User successfuly!");
           data=$('#frmUsers').serialize();
