@@ -230,21 +230,13 @@ $(function() {
       password_confirmation.style.border = "1px solid #ccc";
     }
   }
-      $('#btnAddUsers').click(function(){/*
-      if ( $.trim( $('#user').val() ) == '' ){
-          alertify.alert("You must fill all of the fields!");
-          $('#frmUsers')[0].reset();
-          return false;
-        }    
-        */          
-
+      $('#btnAddUsers').click(function(){    
       if(error_username != false && error_email != false && error_employee != false && error_role != false && error_password != false && error_retype_password != false) {
         alertify.alert("NOT GOOD TO GO!");
         }else{
           alertify.success("User successfuly!");
         }
-
-
+      } 
         data=$('#frmUsers').serialize();
         $.ajax({
           type:"POST",
