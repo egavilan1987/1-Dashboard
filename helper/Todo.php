@@ -2,12 +2,14 @@ To Do:
 
 BECAUSE TODAY WE ARE USING A NEW SYSTEM IN MY JOBPLACE MAYBE THERE WILL NOT BE TIME FOR CODING.
 
-(1) Check the resumes
+(1) FINISH THE RESUME.
 
 Coding
-	*Check the today code.
+	*Check about how to change the field to red color.
+	*Study the add users code many times.
 	*Check the whole code.
 	*Study Sales and Inventory Sales code.
+	*IF POSIBLE CODE.
 
 
 --------------------------------------------
@@ -22,22 +24,6 @@ On my Job To Do List
 Espanol
 *Lectura
 *Escritura
-*1 Capitulo de la Biblia
+*8,9.10. Capitulo de la Biblia
 ---------------------------------------------------
-email
-employee
-gender
-password
-password_confirmation
 
-check_email();
-check_employee();
-check_gender();
-check_password();
-check_password_confirmation();
-
-<div id="email_error_message" style="color:red"></div>
-<div id="employee_error_message" style="color:red"></div>
-<div id="gender_error_message" style="color:red"></div>
-<div id="password_error_message" style="color:red"></div>
-<div id="password_confirmation_error_message" style="color:red"></div>

@@ -85,40 +85,17 @@
 </body>
 </html>
 
-<script type="text/javascript">
-    $(document).ready(function(){
-      $('#btnAddUsers').click(function(){
-
-      alertify.alert("You must fill all of the fields!");  
-
-      if ( $.trim( $('#user').val() ) == '' ){
-          alert("Input is blank!");
-          $('#frmUsers')[0].reset();
-          return false;
-        }              
-
-        data=$('#frmUsers').serialize();
-        $.ajax({
-          type:"POST",
-          data:data,
-          url:"../process/users/addUsers.php",
-          success:function(r){
-            if(r==1){
-            $('#frmUsers')[0].reset();
-            $('#loadUsersTable').load('users/usersTable.php');
-            alertify.success("User successfuly added.");
-          }else{
-            alertify.error("Could not add the user to the list.");
-          }
-        }
-      });
-      });
-    });
-
-  </script>
-
 
 <script>
+$(function() {
+
+  var error_username = false;
+  var error_email = false;
+  var error_employee = false;
+  var error_role = false;
+  var error_password = false;
+  var error_retype_password = false;
+  
 
   $("#user").focusout(function() {
       check_username();
@@ -138,21 +115,27 @@
     $("#password_confirmation").focusout(function() {
       check_password_confirmation();
     });
-  function check_username() {
+
+    function check_username() {
     
     var username_length = $("#user").val().length;
     
     if( $.trim( $('#user').val() ) == '' ){
       $("#username_error_message").html("Input is blank!");
+      $("#username_error_message").show();
+      error_username = true;
       user.style.border = "1px solid red";
       }else if(username_length < 5 || username_length > 20) {
       $("#username_error_message").html("Should be between 5-20 characters");
+      $("#username_error_message").show();
+      error_username = true;
       user.style.border = "1px solid red";
       $("#username_error_message").show();
       error_username = true;
       }else{
       $("#username_error_message").hide();
       user.style.border = "1px solid #ccc";
+      error_username = false;
     }
   
   }
@@ -163,6 +146,8 @@
     
     if( $.trim( $('#email').val() ) == '' ){
       $("#email_error_message").html("Input is blank!");
+      $("#email_error_message").show();
+      error_email = true;
       email.style.border = "1px solid red";
       }else if(!(pattern.test($("#email").val()))) {
       $("#email_error_message").html("Invalid email address");
@@ -181,12 +166,13 @@
     
     if( $.trim( $('#employee').val() ) == '' ){
       $("#employee_error_message").html("Input is blank!");
+      $("#employee_error_message").show();
       employee.style.border = "1px solid red";
-      }else if(employee_length < 5 || employee_length > 20) {
+      }else if(employee_length < 5 || employee_length > 50) {
       $("#employee_error_message").html("Should be between 5-20 characters");
       employee.style.border = "1px solid red";
       $("#employee_error_message").show();
-      error_employee = true;
+        error_employee = true;
       }else{
       $("#employee_error_message").hide();
       employee.style.border = "1px solid #ccc";
@@ -195,11 +181,11 @@
   }
    function check_role() {
 
-    var role = $("#role").val().length;    
-    
+
     if($.trim( $('#role').val() ) == ''){
       $("#role_error_message").html("Please choose a role!");
       role.style.border = "1px solid red";
+      
       }else{
       $("#role_error_message").hide();
       role.style.border = "1px solid #ccc";
@@ -212,6 +198,7 @@
     
     if(password_length < 8) {
       $("#password_error_message").html("At least 8 characters!");
+      $("#password_error_message").show();
       password.style.border = "1px solid red";
       error_password = true;
     } else {
@@ -234,7 +221,63 @@
       $("#password_confirmation_error_message").hide();
       password_confirmation.style.border = "1px solid #ccc";
     }
-  
   }
- 
+/*
+  $("#registration_form").submit(function() {
+                      
+      error_username = false;
+      error_email = false;
+      error_employee = false;
+      error_role = false;
+      error_password = false;
+      error_retype_password = false;
+                      
+      check_username();
+      check_email();
+      check_employee();
+      check_role();
+      check_password();
+      check_password_confirmation();
+    
+    if(error_username == false && error_email == false && error_employee == false && error_role == false && error_password == false && error_retype_password == false) {
+      return true;
+    } else {
+      return false; 
+    }
+
+  });
+*/
+
+      $('#btnAddUsers').click(function(){/*
+      if ( $.trim( $('#user').val() ) == '' ){
+          alertify.alert("You must fill all of the fields!");
+          $('#frmUsers')[0].reset();
+          return false;
+        }    */          
+//&& error_email == false && error_employee == false && error_role == false && error_password == false && error_retype_password == false
+
+      if(error_username != false) {
+        alertify.alert("NOT GOOD TO GO!");
+        }else{
+          alertify.success("User successfuly!");
+        }
+
+
+        data=$('#frmUsers').serialize();
+        $.ajax({
+          type:"POST",
+          data:data,
+          url:"../process/users/addUsers.php",
+          success:function(r){
+            if(r==1){
+            $('#frmUsers')[0].reset();
+            $('#loadUsersTable').load('users/usersTable.php');
+            alertify.success("User successfuly added.");
+          }else{
+            alertify.error("Could not add the user to the list.");
+          }
+        }
+      });
+    });
+}); 
 </script>

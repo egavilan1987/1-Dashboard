@@ -22,6 +22,8 @@
   <!-- Alertify-->
   <link rel="stylesheet" type="text/css" href="../vendor/alertifyjs/css/alertify.css">
   <link rel="stylesheet" type="text/css" href="../vendor/alertifyjs/css/themes/default.css">
+  <!-- Tab Icon-->
+  <link rel="icon" href="../files/EGD.gdraw">
 
 
 
