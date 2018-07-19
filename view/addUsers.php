@@ -233,11 +233,10 @@ $(function() {
       $('#btnAddUsers').click(function(){    
       if(error_username != false && error_email != false && error_employee != false && error_role != false && error_password != false && error_retype_password != false) {
         alertify.alert("NOT GOOD TO GO!");
+        return false;
         }else{
           alertify.success("User successfuly!");
-        }
-      } 
-        data=$('#frmUsers').serialize();
+                 data=$('#frmUsers').serialize();
         $.ajax({
           type:"POST",
           data:data,
@@ -251,6 +250,8 @@ $(function() {
             alertify.error("Could not add the user to the list.");
           }
         }
+        }
+      } 
       });
     });
 }); 
