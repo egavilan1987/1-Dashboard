@@ -231,29 +231,13 @@ $(function() {
     }
   }
 /*
-  $("#registration_form").submit(function() {
-                      
-      error_username = false;
-      error_email = false;
-      error_employee = false;
-      error_role = false;
-      error_password = false;
-      error_retype_password = false;
-                      
-      check_username();
-      check_email();
-      check_employee();
-      check_role();
-      check_password();
-      check_password_confirmation();
-    
+
     if(error_username == false && error_email == false && error_employee == false && error_role == false && error_password == false && error_retype_password == false) {
       return true;
     } else {
       return false; 
     }
 
-  });
 */
 
       $('#btnAddUsers').click(function(){/*
@@ -261,10 +245,10 @@ $(function() {
           alertify.alert("You must fill all of the fields!");
           $('#frmUsers')[0].reset();
           return false;
-        }    */          
-//&& error_email == false && error_employee == false && error_role == false && error_password == false && error_retype_password == false
+        }    
+        */          
 
-      if(error_username != false) {
+      if(error_username != false && error_email != false && error_employee != false && error_role != false && error_password != false && error_retype_password != false) {
         alertify.alert("NOT GOOD TO GO!");
         }else{
           alertify.success("User successfuly!");
