@@ -151,12 +151,14 @@ $(function() {
       email.style.border = "1px solid red";
       }else if(!(pattern.test($("#email").val()))) {
       $("#email_error_message").html("Invalid email address");
+      error_email = true;
       email.style.border = "1px solid red";
       $("#email_error_message").show();
       error_email = true;
       } else {
       $("#email_error_message").hide();
       email.style.border = "1px solid #ccc";
+      error_email = false; 
       }
   
   }
@@ -167,15 +169,17 @@ $(function() {
     if( $.trim( $('#employee').val() ) == '' ){
       $("#employee_error_message").html("Input is blank!");
       $("#employee_error_message").show();
+      error_employee = true;
       employee.style.border = "1px solid red";
       }else if(employee_length < 5 || employee_length > 50) {
       $("#employee_error_message").html("Should be between 5-20 characters");
-      employee.style.border = "1px solid red";
       $("#employee_error_message").show();
-        error_employee = true;
+      error_employee = true;
+      employee.style.border = "1px solid red";
       }else{
       $("#employee_error_message").hide();
       employee.style.border = "1px solid #ccc";
+      error_employee = false;
     }
   
   }
@@ -185,10 +189,11 @@ $(function() {
     if($.trim( $('#role').val() ) == ''){
       $("#role_error_message").html("Please choose a role!");
       role.style.border = "1px solid red";
-      
+      error_role = true;
       }else{
       $("#role_error_message").hide();
       role.style.border = "1px solid #ccc";
+      error_role = false;
     }
   
   }
@@ -199,10 +204,12 @@ $(function() {
     if(password_length < 8) {
       $("#password_error_message").html("At least 8 characters!");
       $("#password_error_message").show();
+      error_password = true;
       password.style.border = "1px solid red";
       error_password = true;
     } else {
       $("#password_error_message").hide();
+      error_password = false;
       password.style.border = "1px solid #ccc";
     }
   
@@ -215,10 +222,12 @@ $(function() {
     if(password !=  retype_password) {
       $("#password_confirmation_error_message").html("Passwords don't match");
       $("#password_confirmation_error_message").show();
+      error_retype_password = true;
       password_confirmation.style.border = "1px solid red";
       error_retype_password = true;
     } else {
       $("#password_confirmation_error_message").hide();
+      error_retype_password = false;
       password_confirmation.style.border = "1px solid #ccc";
     }
   }
