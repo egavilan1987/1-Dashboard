@@ -236,7 +236,7 @@ $(function() {
       if(error_username != false && error_email != false && error_employee != false && error_role != false && error_password != false && error_retype_password != false) {
         alertify.alert("Please fill all the fiel with the correct information!");
         return false;
-        }else if(Empties = false;){
+        }else if(Empties = false){
 	alertify.alert("You must fill all of the fields!");
 	return false;
         }else (){
