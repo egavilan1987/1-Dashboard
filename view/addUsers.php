@@ -224,19 +224,19 @@ $(function() {
       $("#password_confirmation_error_message").show();
       error_retype_password = true;
       password_confirmation.style.border = "1px solid red";
-    } else {
+      } else {
       $("#password_confirmation_error_message").hide();
       error_retype_password = false;
       password_confirmation.style.border = "1px solid #ccc";
-    }
-  }
+         }
+      }
       $('#btnAddUsers').click(function(){    
       if(error_username != false && error_email != false && error_employee != false && error_role != false && error_password != false && error_retype_password != false) {
         alertify.alert("NOT GOOD TO GO!");
         return false;
         }else{
           alertify.success("User successfuly!");
-                 data=$('#frmUsers').serialize();
+          data=$('#frmUsers').serialize();
         $.ajax({
           type:"POST",
           data:data,
@@ -249,10 +249,10 @@ $(function() {
           }else{
             alertify.error("Could not add the user to the list.");
           }
+         }
         }
-        }
-      } 
+       } 
       });
     });
-}); 
+  }); 
 </script>
