@@ -13,8 +13,8 @@ Coding
 
 
 RESEACH
-	*Loading button
-	*Check about how to change the field to red color.
+	*Alertify title
+
 	
 --------------------------------------------
 On my Job To Do List
@@ -31,3 +31,11 @@ Espanol
 *8,9.10. Capitulo de la Biblia
 ---------------------------------------------------
 
+
+      $('#btnCancel').click(function(){
+        alertify.confirm('Do you want to cancel new user registration?', function(){ 
+              alertify.success("User successfuly cancel");
+      }, function(){ 
+        alertify.error('Canceled!')
+      });
+    }

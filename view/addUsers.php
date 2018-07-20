@@ -71,7 +71,7 @@
                     </div>
                   </div>
                 </div>
-                    <button type="button" class="btn btn-danger">Cancel</button>
+                    <button type="button" id="btnCancel"  class="btn btn-danger">Cancel</button>
                     <button type="button" id="btnAddUsers" class="btn btn-primary">Save</button>
               </form>            
           </div>
@@ -96,10 +96,10 @@ $(function() {
   var error_password = false;
   var error_retype_password = false;
   
-  var Empties =  true;
+  var Empty =  true;
 
   $("#user").focusout(function() {
-      Empties = false;
+      Empty = false;
       check_username();
     });
    $("#email").focusout(function() {
@@ -212,6 +212,7 @@ $(function() {
     } else {
       $("#password_error_message").hide();
       error_password = false;
+      error_retype_password = true;
       password.style.border = "1px solid #ccc";
     }
   
@@ -232,32 +233,35 @@ $(function() {
       password_confirmation.style.border = "1px solid #ccc";
          }
       }
-      $('#btnAddUsers').click(function(){    
-      if(error_username != false && error_email != false && error_employee != false && error_role != false && error_password != false && error_retype_password != false) {
-        alertify.alert("Please fill all the fiel with the correct information!");
-        return false;
-        }else if(Empties = false){
-	alertify.alert("You must fill all of the fields!");
-	return false;
-        }else (){
+      $('#btnAddUsers').click(function(){
+
+        if(Empty != false){
+          alertify.alert("You must fill in all the fields!");
+          return false;
+        }else if(error_username == true || error_email != false || error_employee != false || error_role != false || error_password != false || error_retype_password != false) {
+          alertify.alert("Please fill all the fields with the required information!");
+          return false;
+        }else{
           alertify.success("User successfuly!");
-          data=$('#frmUsers').serialize();
+          $('#frmAddUsers')[0].reset();          
+        return false;
+        }
+
+        data=$('#frmUsers').serialize();
         $.ajax({
           type:"POST",
           data:data,
           url:"../process/users/addUsers.php",
           success:function(r){
             if(r==1){
-            $('#frmUsers')[0].reset();
+            $('#frmAddUsers')[0].reset();
             $('#loadUsersTable').load('users/usersTable.php');
             alertify.success("User successfuly added.");
-          }else{
+              }else{
             alertify.error("Could not add the user to the list.");
           }
-         }
         }
-       } 
       });
     });
-  }); 
+}); 
 </script>
