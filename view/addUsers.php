@@ -22,7 +22,7 @@
       <!-- Example DataUsers Card-->
       <div class="card mb-3">
         <div class="card-header">
-          <i class="fa fa-user-plus"></i> Users</div>
+          <i class="fa fa-user-plus"></i> User Registration Form</div>
         <div class="card-body">
           </tr>
           <div class="table-responsive">
@@ -30,6 +30,13 @@
               <form id="frmAddUsers">
                 <h2>Create New User</h2>
                 <hr class="colorgraph">
+                <div id="alert_error_message" class="alert alert-danger alert-dismissible fade show" role="alert">
+                  <i class="fa fa-exclamation-triangle"></i>
+                  <strong>Alert!</strong> Please check in on some of the fields below.
+                  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
                 <p style="color:red"><i>*Required</i></p>
                 <div class="row">
                   <div class="col-xs-12 col-sm-6 col-md-6">
@@ -95,11 +102,8 @@ $(function() {
   var error_role = false;
   var error_password = false;
   var error_retype_password = false;
-  
-  var Empty =  true;
 
   $("#user").focusout(function() {
-      Empty = false;
       check_username();
     });
    $("#email").focusout(function() {
@@ -137,7 +141,6 @@ $(function() {
       }else{
       $("#username_error_message").hide();
       user.style.border = "1px solid #ccc";
-      error_username = false;
     }
   
   }
@@ -160,7 +163,6 @@ $(function() {
       } else {
       $("#email_error_message").hide();
       email.style.border = "1px solid #ccc";
-      error_email = false; 
       }
   
   }
@@ -181,7 +183,6 @@ $(function() {
       }else{
       $("#employee_error_message").hide();
       employee.style.border = "1px solid #ccc";
-      error_employee = false;
     }
   
   }
@@ -195,7 +196,6 @@ $(function() {
       }else{
       $("#role_error_message").hide();
       role.style.border = "1px solid #ccc";
-      error_role = false;
     }
   
   }
@@ -208,11 +208,8 @@ $(function() {
       $("#password_error_message").show();
       error_password = true;
       password.style.border = "1px solid red";
-      error_password = true;
     } else {
       $("#password_error_message").hide();
-      error_password = false;
-      error_retype_password = true;
       password.style.border = "1px solid #ccc";
     }
   
@@ -229,39 +226,76 @@ $(function() {
       password_confirmation.style.border = "1px solid red";
       } else {
       $("#password_confirmation_error_message").hide();
-      error_retype_password = false;
       password_confirmation.style.border = "1px solid #ccc";
          }
       }
       $('#btnAddUsers').click(function(){
 
-        if(Empty != false){
-          alertify.alert("You must fill in all the fields!");
-          return false;
-        }else if(error_username == true || error_email != false || error_employee != false || error_role != false || error_password != false || error_retype_password != false) {
-          alertify.alert("Please fill all the fields with the required information!");
-          return false;
-        }else{
-          alertify.success("User successfuly!");
-          $('#frmAddUsers')[0].reset();          
-        return false;
-        }
+        error_username = false;
+        error_email = false;
+        error_employee = false;
+        error_role = false;
+        error_password = false;
+        error_retype_password = false;
 
-        data=$('#frmUsers').serialize();
-        $.ajax({
-          type:"POST",
-          data:data,
-          url:"../process/users/addUsers.php",
-          success:function(r){
-            if(r==1){
-            $('#frmAddUsers')[0].reset();
-            $('#loadUsersTable').load('users/usersTable.php');
-            alertify.success("User successfuly added.");
-              }else{
-            alertify.error("Could not add the user to the list.");
-          }
+        check_username();
+        check_email();
+        check_employee();
+        check_role();
+        check_password();
+        check_password_confirmation();
+
+    
+      if(error_username == false && error_email == false && error_employee == false && error_role == false && error_password == false && error_retype_password == false) {          
+          $('#frmAddUsers')[0].reset();
+          $("#alert_error_message").hide();
+          alertify.success("User successfuly added.");
+          return false; 
+        }else{
+
+          $("#alert_error_message").show();
+
+          return false; 
         }
-      });
     });
-}); 
+
+      $('#btnCancel').click(function(){
+
+        alertify.confirm('Cancel User Registration','Do you want to cancel user registration?', function(){
+          $('#frmAddUsers')[0].reset(); 
+          alertify.error('Canceled!');
+
+          $("#alert_error_message").hide();
+          user.style.border = "1px solid #ccc";
+          $("#email_error_message").hide();
+          email.style.border = "1px solid #ccc";
+          $("#employee_error_message").hide();
+          employee.style.border = "1px solid #ccc";
+          $("#role_error_message").hide();
+          role.style.border = "1px solid #ccc";
+          $("#password_error_message").hide();
+          password.style.border = "1px solid #ccc";
+          $("#password_confirmation_error_message").hide();
+          password_confirmation.style.border = "1px solid #ccc";
+
+
+
+
+          $("#username_error_message").hide();
+        }, function(){ 
+          alertify.success("Cancel Operation Canceled!");
+        });
+
+    });
+});
+
 </script>
+</script>
+
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $("#alert_error_message").hide();
+    });
+  </script>
+
+

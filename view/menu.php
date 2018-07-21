@@ -12,10 +12,8 @@
   <!-- Custom fonts for this template-->
   <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
   <!-- datatable plugins-->
-
   <link rel="stylesheet" type="text/css" href="../vendor/datatable/bootstrap.css">
   <link rel="stylesheet" type="text/css" href="../vendor/datatable/dataTables.bootstrap4.min.css">
-
   <!-- Custom styles for this template-->
   <link href="../css/sb-admin.css" rel="stylesheet">
   <link href="../css/sb-admin.css" rel="stylesheet">
@@ -23,11 +21,7 @@
   <link rel="stylesheet" type="text/css" href="../vendor/alertifyjs/css/alertify.css">
   <link rel="stylesheet" type="text/css" href="../vendor/alertifyjs/css/themes/default.css">
   <!-- Tab Icon-->
-  <link rel="icon" href="../files/EGD.gdraw">
-
-
-
-
+  <link rel="icon" href="../files/EGD.JPG">
 </head>
 <body>
 <body class="fixed-nav sticky-footer bg-dark" id="page-top">
@@ -199,7 +193,7 @@
     <footer class="sticky-footer">
       <div class="container">
         <div class="text-center">
-          <small>Copyright © Your Website 2018</small>
+          <small>Copyright © EGDashboard 2018</small>
         </div>
       </div>
     </footer>

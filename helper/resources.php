@@ -11,7 +11,7 @@ https://codecanyon.net/item/regex-the-speed-inproved-php-login-website-user-mana
 
 -----------------------------------------------------------
 
-https://codecanyon.net/item/codeigniter-3-user-management-with-privilege-level/19190329?s_rank=10
+https://codecanyon.net/item/codeigniter-3-user-management-with-privilege-level/19190329?s_rank=10 (Importante para impresion de la informacin del empleado)
 
 https://codecanyon.net/item/multilingual-user-management/20386532?s_rank=9
 
