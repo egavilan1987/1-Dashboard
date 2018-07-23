@@ -125,13 +125,13 @@
 					$('#nameUpdate').val(data['user_name']);
 					$('#lastNameUpdate').val(data['email']);
 					$('#userUpdate').val(data['full_name']);
-     $('#userUpdate').val(data['user_role,']);
-     $('#userUpdate').val(data['password']);
-     $('#userUpdate').val(data['status']);
-     $('#userUpdate').val(data['created_by_user']);
-     $('#userUpdate').val(data['created_date']);
-     $('#userUpdate').val(data['updated_by_user']);
-     $('#userUpdate').val(data['updated_date']);
+				        $('#userUpdate').val(data['user_role,']);
+				        $('#userUpdate').val(data['password']);
+				        $('#userUpdate').val(data['status']);
+				        $('#userUpdate').val(data['created_by_user']);
+				        $('#userUpdate').val(data['created_date']);
+				        $('#userUpdate').val(data['updated_by_user']);
+				       $('#userUpdate').val(data['updated_date']);
 				}
 			});
 		}
