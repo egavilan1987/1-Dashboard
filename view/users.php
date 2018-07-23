@@ -3,6 +3,7 @@
   <title>Users</title>
   <?php require_once "menu.php"; ?>
  </head>
+ 
  <body class="fixed-nav sticky-footer bg-dark" id="page-top">
   <div class="content-wrapper">
     <div class="container-fluid">
@@ -13,17 +14,21 @@
         </li>
         <li class="breadcrumb-item active">Users</li>
       </ol>
-      <span class="btn btn-primary" data-toggle="modal" data-target="#addUserModal">+ Add New User</span>
       <a href="addUsers.php" class="btn btn-success" role="button" aria-pressed="true"><span class="fa fa-user-plus"></span>Add New User</a>
+
+      <!-- Button trigger modal -->
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#usersModal">
+        Launch demo modal
+      </button>
 
       <br>
       <br>
-      <!-- Example DataUsers Card-->
+      <!-- DataUsers Card-->
       <div class="card mb-3">
         <div class="card-header">
-          <i class="fa fa-table"></i> Users</div>
+          <i class="fa fa-table"></i> Users
+        </div>
         <div class="card-body">
-          </tr>
           <div class="table-responsive">
             <div id="loadUsersTable"></div>
           </div>
@@ -32,32 +37,74 @@
       </div>
     </div>
   </div>
-
-  <!-- Add New Department Modal-->
-  <div class="modal fade" id="addUserModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <!-- User Detail Modal -->
+  <div class="modal fade" id="usersModal" tabindex="-1" role="dialog" aria-labelledby="usersModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Add New User</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
+          <h5 class="modal-title" id="usersModalLabel">User Information</h5>
           </button>
+          <a href="#" class="tooltip-test" title="Tooltip">Edit</a>
         </div>
         <div class="modal-body">
-          <form id="frmUsers">
-            <label>User</label>
-            <input type="text" class="form-control input-sm" name="user" id="user">
-          </form>
+               <!-- DataUsers Card-->
+          <div class="card mb-3">
+            <div class="card-header">
+              <i class="fa fa-table"></i> User Details
+              <a href="#" class="tooltip-test" title="Tooltip">Edit</a>
+            </div>
+            <div class="card-body">
+              <div class="table-responsive">
+                <div>
+                  <table class="table table-user-information">
+                    <tbody>
+                      <tr>
+                        <td>Department:</td>
+                        <td>Programming</td>
+                      </tr>
+                      <tr>
+                        <td>Hire date:</td>
+                        <td>06/23/2013</td>
+                      </tr>
+                      <tr>
+                        <td>Date of Birth</td>
+                        <td>01/24/1988</td>
+                      </tr>
+                   
+                         <tr>
+                             <tr>
+                        <td>Gender</td>
+                        <td>Female</td>
+                      </tr>
+                        <tr>
+                        <td>Home Address</td>
+                        <td>Kathmandu,Nepal</td>
+                      </tr>
+                      <tr>
+                        <td>Email</td>
+                        <td><a href="mailto:info@support.com">info@support.com</a></td>
+                      </tr>
+                        <td>Phone Number</td>
+                        <td>123-4567-890(Landline)<br><br>555-4567-890(Mobile)
+                        </td>
+                           
+                      </tr>
+                     
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+            <div class="card-footer small text-muted"></div>
+          </div>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-          <button type="button" id="btnAddUsers" class="btn btn-primary" data-dismiss="modal">Save</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
         </div>
       </div>
     </div>
   </div>
-
-
+  <!--End User Detail Modal -->
 </body>
 </html>
 
@@ -89,6 +136,26 @@
       });
       });
     });
+
+    function deleteData(idUser){
+      alertify.confirm('Delete Registered User','Do you want to delete the user?', function(){ 
+        $.ajax({
+          type:"POST",
+          data:"idUser=" + idUser,
+          url:"../process/users/deleteUser.php",
+          success:function(r){
+            if(r==1){
+              $('#loadUsersTable').load("users/usersTable.php");
+              alertify.success("User successfuly deleted!");
+            }else{
+              alertify.error("User could not be deleled.");
+            }
+          }
+        });
+      }, function(){ 
+        alertify.error('Canceled!')
+      });
+    }
 
   </script>
 

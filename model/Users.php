@@ -4,20 +4,25 @@
 			
 			$c=new Connect();
 			$connection=$c->connection();
-			
-			$date=date('Y-m-d');
-			$user="admin";
-			
+
+
 			$sql="INSERT INTO users (user_name,
-							password,
+							email,
+							full_name,
 							user_role,
+							password,
+							status,
 							created_by_user,
 							created_date)
 						VALUES ('$data[0]',
 							'$data[1]',
 							'$data[2]',
-							'$user',
-							'$date')";
+							'$data[3]',
+							'$data[4]',
+							'Inactive',
+							'$data[5]',
+							 NOW())";
+
 			return mysqli_query($connection,$sql);
 		}
 		public function loginUser($inform){
@@ -92,6 +97,15 @@
 						user_role='$data[2]'
 						WHERE id_user='$data[0]'";
 			return mysqli_query($connection,$sql);	
+		}
+		public function deleteUser($idUser){
+			
+			$c=new Connect();
+			$connection=$c->connection();
+			
+			$sql="DELETE FROM users 
+					WHERE id_user='$idUser'";
+			return mysqli_query($connection,$sql);
 		}
 	}
  ?>

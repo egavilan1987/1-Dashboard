@@ -247,9 +247,21 @@ $(function() {
 
     
       if(error_username == false && error_email == false && error_employee == false && error_role == false && error_password == false && error_retype_password == false) {          
-          $('#frmAddUsers')[0].reset();
           $("#alert_error_message").hide();
-          alertify.success("User successfuly added.");
+          data=$('#frmAddUsers').serialize();
+          $.ajax({
+            type:"POST",
+            data:data,
+            url:"../process/regLogin/registerUser.php",
+            success:function(r){
+            if(r==1){
+              $('#frmAddUsers')[0].reset();
+              alertify.success("New user successfuly added!");
+          }else{
+              alertify.error("Could not add the new user.");
+              }
+            }
+          });
           return false; 
         }else{
 
@@ -277,9 +289,6 @@ $(function() {
           password.style.border = "1px solid #ccc";
           $("#password_confirmation_error_message").hide();
           password_confirmation.style.border = "1px solid #ccc";
-
-
-
 
           $("#username_error_message").hide();
         }, function(){ 
