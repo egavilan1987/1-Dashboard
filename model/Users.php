@@ -67,26 +67,36 @@
 			
 			$sql="SELECT id_user,
 					user_name,
-					password,
+					email,
+					full_name,
 					user_role,
+					password,
+					status,
 					created_by_user,
-					updated_by_user,
 					created_date,
+					updated_by_user,
 					updated_date
-					FROM users 
+					FROM users
 					WHERE id_user='$idUser'";
 					
 			$result=mysqli_query($connection,$sql);
 			
 			$row=mysqli_fetch_row($result);
 			
-			$userArray=array(
+			$userData=array(
 						'id_user' => $row[0],
-						'name' => $row[1],
-						'lastName' => $row[2],
-						'email' => $row[3]
+						'user_name' => $row[1],
+						'email' => $row[2],
+						'full_name' => $row[3],
+						'user_role' => $row[4],
+						'password' => $row[5],
+						'status' => $row[6],
+						'created_by_user' => $row[7],
+						'created_date' => $row[8],
+						'updated_by_user' => $row[9],
+						'updated_date' => $row[10]
 						);
-			return $userArray;
+			return $userData;
 		}
 		public function updateUser($data){
 			
