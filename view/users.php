@@ -109,6 +109,46 @@
 </html>
 
 <script type="text/javascript">
+ 
+ 
+ 
+ 
+ 
+ 		function addUser(idUser){
+			$.ajax({
+				type:"POST",
+				data:"idUser=" + idUser,
+				url:"../process/users/getUserData.php",
+				success:function(r){
+					data=jQuery.parseJSON(r);
+					$('#idUser').val(data['id_user']);
+					$('#nameUpdate').val(data['user_name']);
+					$('#lastNameUpdate').val(data['email']);
+					$('#userUpdate').val(data['full_name']);
+     $('#userUpdate').val(data['user_role,']);
+     $('#userUpdate').val(data['password']);
+     $('#userUpdate').val(data['status']);
+     $('#userUpdate').val(data['created_by_user']);
+     $('#userUpdate').val(data['created_date']);
+     $('#userUpdate').val(data['updated_by_user']);
+     $('#userUpdate').val(data['updated_date']);
+				}
+			});
+		}
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
     $(document).ready(function(){
       $('#loadUsersTable').load('users/usersTable.php');
       $('#btnAddUsers').click(function(){
