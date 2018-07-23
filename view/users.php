@@ -122,16 +122,16 @@
 				success:function(r){
 					data=jQuery.parseJSON(r);
 					$('#idUser').val(data['id_user']);
-					$('#nameUpdate').val(data['user_name']);
-					$('#lastNameUpdate').val(data['email']);
-					$('#userUpdate').val(data['full_name']);
-				        $('#userUpdate').val(data['user_role,']);
-				        $('#userUpdate').val(data['password']);
-				        $('#userUpdate').val(data['status']);
-				        $('#userUpdate').val(data['created_by_user']);
-				        $('#userUpdate').val(data['created_date']);
-				        $('#userUpdate').val(data['updated_by_user']);
-				       $('#userUpdate').val(data['updated_date']);
+					$('#showUserName').val(data['user_name']);
+					$('#showEmail').val(data['email']);
+					$('#showFullName').val(data['full_name']);
+				        $('#showUserRole').val(data['user_role,']);
+				        $('#showPassword').val(data['password']);
+				        $('#showStatus').val(data['status']);
+				        $('#showCreatedBy').val(data['created_by_user']);
+				        $('#showCreatedDate').val(data['created_date']);
+				        $('#showUpdatedBy').val(data['updated_by_user']);
+				       $('#showUpdatedDate').val(data['updated_date']);
 				}
 			});
 		}
