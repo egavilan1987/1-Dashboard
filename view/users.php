@@ -43,61 +43,43 @@
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="usersModalLabel">User Information</h5>
-          </button>
-          <a href="#" class="tooltip-test" title="Tooltip">Edit</a>
+          <center>
+            <a href="users.php">Edit&nbsp;</a>
+            <a href="users.php">Print</a>
+          </center>
         </div>
         <div class="modal-body">
-               <!-- DataUsers Card-->
-          <div class="card mb-3">
-            <div class="card-header">
-              <i class="fa fa-table"></i> User Details
-              <a href="#" class="tooltip-test" title="Tooltip">Edit</a>
-            </div>
-            <div class="card-body">
-              <div class="table-responsive">
-                <div>
-                  <table class="table table-user-information">
-                    <tbody>
+                <div class="modal-body">
+                    <center>
+                    <img src="../files/1.JPG" name="aboutme" width="140" height="140" border="0" class="img-thumbnail"></a>
+                    <div class="media-heading"><Strong>Enmanuel De Jesus Gavilan Cruz</Strong></div>
+                    <div class="media-heading">Admin</div>
+                    <div>egavilan</div>
+                    <div>enmanuelgc@gmail.com</div>
+                    <center>
+                    <hr>                    
                       <tr>
-                        <td>Department:</td>
-                        <td>Programming</td>
+                        <td>Created by:</td>
+                        <td>egavilan</td>
                       </tr>
+                      <br>
                       <tr>
-                        <td>Hire date:</td>
+                        <td>Date created:</td>
                         <td>06/23/2013</td>
                       </tr>
+                      <br>
                       <tr>
-                        <td>Date of Birth</td>
+                        <td>Updated by:</td>
+                        <td>egavilan</td>
+                      </tr>
+                      <br>
+                      <tr>
+                        <td>Date Updated</td>
                         <td>01/24/1988</td>
                       </tr>
-                   
-                         <tr>
-                             <tr>
-                        <td>Gender</td>
-                        <td>Female</td>
-                      </tr>
-                        <tr>
-                        <td>Home Address</td>
-                        <td>Kathmandu,Nepal</td>
-                      </tr>
-                      <tr>
-                        <td>Email</td>
-                        <td><a href="mailto:info@support.com">info@support.com</a></td>
-                      </tr>
-                        <td>Phone Number</td>
-                        <td>123-4567-890(Landline)<br><br>555-4567-890(Mobile)
-                        </td>
-                           
-                      </tr>
-                     
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-            </div>
-            <div class="card-footer small text-muted"></div>
-          </div>
-        </div>
+                      <br>
+                      <br>
+                    </center>                          
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
         </div>
@@ -109,46 +91,6 @@
 </html>
 
 <script type="text/javascript">
- 
- 
- 
- 
- 
- 		function addUser(idUser){
-			$.ajax({
-				type:"POST",
-				data:"idUser=" + idUser,
-				url:"../process/users/getUserData.php",
-				success:function(r){
-					data=jQuery.parseJSON(r);
-					$('#idUser').val(data['id_user']);
-					$('#showUserName').val(data['user_name']);
-					$('#showEmail').val(data['email']);
-					$('#showFullName').val(data['full_name']);
-				        $('#showUserRole').val(data['user_role,']);
-				        $('#showPassword').val(data['password']);
-				        $('#showStatus').val(data['status']);
-				        $('#showCreatedBy').val(data['created_by_user']);
-				        $('#showCreatedDate').val(data['created_date']);
-				        $('#showUpdatedBy').val(data['updated_by_user']);
-				       $('#showUpdatedDate').val(data['updated_date']);
-				}
-			});
-		}
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
     $(document).ready(function(){
       $('#loadUsersTable').load('users/usersTable.php');
       $('#btnAddUsers').click(function(){
