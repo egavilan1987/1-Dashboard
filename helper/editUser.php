@@ -208,6 +208,121 @@ https://bootsnipp.com/snippets/8M3Zn
 
 -
 
+********************************************************************************************************
+PROFILE IMAGE
+
+
+
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+ <div class="container">
+            <div class="row">
+                <div class="col-md-6  offset-md-0  toppad">
+                    <div class="card">
+                        <div class="card-body">
+                            <h3 class="card-title">Cambia tu clave</h3>
+                            <table class="table table-user-information ">
+                                <tbody>
+                                    <tr>
+                                        <td>Clave actual:</td>
+                                        <td>
+                                            <input
+                                            icon="password-icon"
+                                            name="password"
+                                            type="password"
+                                            value=''
+                                            focus
+                                            />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Calve nueva:</td>
+                                        <td>
+                                            <Input
+                                            icon="password-icon"
+                                            name="newPassword"
+                                            type="password"
+                                            value=''
+                                            />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Repita clave nueva:</td>
+                                        <td>
+                                            <Input
+                                            icon="password-icon"
+                                            name="newPassword"
+                                            type="password"
+                                            value=''
+                                            />
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>                          
+                            <a href="#" onClick={props.handleSubmitPass} class="btn btn-primary ml-2">Cambiar clave</a>
+                        </div>
+                    </div>
+                </div>
+                
+                
+                <div class="col-md-6  offset-md-0  toppad">
+                    <div class="card">
+                        <div class="card-body">
+                            <h3 class="card-title">Cambia tu clave</h3>
+                            <table class="table table-user-information ">
+                                <dl class="form-group edit-profile-avatar mr-4 float-right">
+  <dt><label for="upload-profile-picture">Profile picture</label></dt>
+  <dd class="avatar-upload-container clearfix">
+    <img class="avatar rounded-2" src="https://avatars3.githubusercontent.com/u/29561850?s=400&amp;u=d29c527f6afa334781a92b5ee88cfad35ffd1d00&amp;v=4" width="200" height="200" alt="@egavilan1987" />
+    <div class="avatar-upload">
+      <label class="position-relative btn button-change-avatar mt-3 width-full text-center">
+        Upload new picture
+        <input id="upload-profile-picture" type="file" class="manual-file-chooser width-full height-full ml-0 js-manual-file-chooser">
+      </label>
+
+      <div class="upload-state loading">
+        <button type="button" class="btn mt-3 width-full text-center" disabled>
+          <img width="16" height="16" alt="" class="v-align-text-bottom" src="https://assets-cdn.github.com/images/spinners/octocat-spinner-32.gif" /> Uploading...
+        </button>
+      </div>
+
+      <div class="upload-state text-red file-empty">
+        This file is empty.
+      </div>
+
+      <div class="upload-state text-red too-big">
+        Please upload a picture smaller than 1 MB.
+      </div>
+
+      <div class="upload-state text-red bad-dimensions">
+        Please upload a picture smaller than 10,000x10,000.
+      </div>
+
+      <div class="upload-state text-red bad-file">
+        We only support PNG, GIF, or JPG pictures.
+      </div>
+
+      <div class="upload-state text-red failed-request">
+        Something went really wrong and we can’t process that picture.
+      </div>
+
+      <div class="upload-state text-red bad-format">
+        File contents don’t match the file extension.
+      </div>
+    </div> <!-- /.avatar-upload -->
+  </dd>
+</dl>
+                            </table>                          
+                            <a href="#" onClick={props.handleSubmitPass} class="btn btn-primary ml-2">Cambiar clave</a>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
 
 
 
