@@ -1,6 +1,6 @@
 <html>
  <head>
-  <title>Create New User</title>
+  <title>Edit User</title>
   <?php require_once "menu.php"; ?>
  </head>
  <body class="fixed-nav sticky-footer bg-dark" id="page-top">
@@ -14,78 +14,170 @@
         <li class="breadcrumb-item">
           <a href="users.php">Users</a>
         </li>
-        <li class="breadcrumb-item active">New Users</li>
+        <li class="breadcrumb-item active">Edit User</li>
       </ol>
-      <a href="users.php" class="btn btn-success" role="button" aria-pressed="true"><span class="fa fa-fw fa-users"></span>Users</a>
+      <a href="users.php" class="btn btn-success" role="button" aria-pressed="true"><span class="fa fa-fw fa-users"></span>&nbsp;&nbsp;Users&nbsp;&nbsp;</a>
       <br>
       <br>
-      <!-- Example DataUsers Card-->
-      <div class="card mb-3">
-        <div class="card-header">
-          <i class="fa fa-user-plus"></i> User Registration Form</div>
-        <div class="card-body">
-          </tr>
-          <div class="table-responsive">
-            <div class="container">
-              <form id="frmAddUsers">
-                <h2>Create New User</h2>
-                <hr class="colorgraph">
-                <div id="alert_error_message" class="alert alert-danger alert-dismissible fade show" role="alert">
-                  <i class="fa fa-exclamation-triangle"></i>
-                  <strong>Alert!</strong> Please check in on some of the fields below.
-                  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
-                </div>
-                <p style="color:red"><i>*Required</i></p>
-                <div class="row">
-                  <div class="col-xs-12 col-sm-6 col-md-6">
-                    <div class="form-group">
-                      <input type="text" name="user" id="user" class="form-control input-lg" placeholder="User*">
-                      <div id="username_error_message" style="color:red"></div>
+
+
+
+
+
+
+
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-3">
+            <ul class="nav nav-pills nav-stacked admin-menu">
+
+               
+
+                <li class="active">
+                  <a href="#" class="btn btn-primary btn-ms" role="button" aria-pressed="true" data-target-id="home"><i class="fa fa-cog" aria-hidden="true"></i>&nbsp;&nbsp;Profile Settings &nbsp;&nbsp;&nbsp;</a>
+                </li>
+                <br><br>
+                <li>
+                  <a href="#" class="btn btn-primary btn-ms" role="button" aria-pressed="true" data-target-id="widgets"><i class="fa fa-unlock-alt" aria-hidden="true"></i> &nbsp;Change Passworld</a>
+                </li>
+
+
+            </ul>
+        </div>
+        <div class="col-md-9 well admin-content" id="home">        
+          <!-- Example DataUsers Card-->
+          <div class="card mb-3">
+            <div class="card-header">
+              <i class="fa fa-pencil"></i>  Edit User</div>
+            <div class="card-body">       
+              <div class="table-responsive">
+                <div class="container">
+                  <form id="frmAddUsers">
+                    <h2>Create New User</h2>
+                    <hr class="colorgraph">
+                    <div id="alert_error_message" class="alert alert-danger alert-dismissible fade show" role="alert">
+                      <i class="fa fa-exclamation-triangle"></i>
+                      <strong>Alert!</strong> Please check in on some of the fields below.
+                      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
                     </div>
-                  </div>
-                  <div class="col-xs-12 col-sm-6 col-md-6">
-                    <div class="form-group">
-                      <input type="text" name="email" id="email" class="form-control input-lg" placeholder="E-mail*">
-                      <div id="email_error_message" style="color:red"></div>
+                    <p style="color:red"><i>*Required</i></p>
+                    <div class="row">
+                      <div class="col-xs-12 col-sm-6 col-md-6">
+                        <div class="form-group">
+                          <input type="text" name="user" id="user" class="form-control input-lg" placeholder="User*">
+                          <div id="username_error_message" style="color:red"></div>
+                        </div>
+                      </div>
+                      <div class="col-xs-12 col-sm-6 col-md-6">
+                        <div class="form-group">
+                          <input type="text" name="email" id="email" class="form-control input-lg" placeholder="E-mail*">
+                          <div id="email_error_message" style="color:red"></div>
+                        </div>
+                      </div>
                     </div>
-                  </div>
-                </div>
-                <div class="form-group">
-                  <input type="text" name="employee" id="employee" class="form-control input-lg" placeholder="Employee Name*">
-                  <div id="employee_error_message" style="color:red"></div>
-                </div>
-                <div class="form-group">
-                  <select name="role" id="role" class="form-control">
-                    <option value="" hidden>Role*</option>
-                    <option>Admin</option>
-                    <option>User</option>
-                  </select>
-                  <div id="role_error_message" style="color:red"></div>
-                </div>
-                <div class="row">
-                  <div class="col-xs-12 col-sm-6 col-md-6">
                     <div class="form-group">
-                      <input type="password" name="password" id="password" class="form-control input-lg" placeholder="Password*">
-                      <div id="password_error_message" style="color:red"></div>
+                      <input type="text" name="employee" id="employee" class="form-control input-lg" placeholder="Employee Name*">
+                      <div id="employee_error_message" style="color:red"></div>
                     </div>
-                  </div>
-                  <div class="col-xs-12 col-sm-6 col-md-6">
                     <div class="form-group">
-                      <input type="password" name="password_confirmation" id="password_confirmation" class="form-control input-lg" placeholder="Confirm Password*">
-                      <div id="password_confirmation_error_message" style="color:red"></div>
+                      <select name="role" id="role" class="form-control">
+                        <option value="" hidden>Role*</option>
+                        <option>Admin</option>
+                        <option>User</option>
+                      </select>
+                      <div id="role_error_message" style="color:red"></div>
                     </div>
-                  </div>
+                        <button type="button" id="btnCancel"  class="btn btn-danger">Cancel</button>
+                        <button type="button" id="btnAddUsers" class="btn btn-primary">Save</button>
+                  </form>
                 </div>
-                    <button type="button" id="btnCancel"  class="btn btn-danger">Cancel</button>
-                    <button type="button" id="btnAddUsers" class="btn btn-primary">Save</button>
-              </form>            
+              </div>
+            </div>
           </div>
         </div>
-      </div>
+        <!-- Example DataUsers Card-->
+        <div class="col-md-9 well admin-content" id="widgets">
+          <!-- Example DataUsers Card-->
+          <div class="card mb-3">
+            <div class="card-header">
+              <i class="fa fa-pencil"></i>  Edit Password</div>
+            <div class="card-body">       
+              <div class="table-responsive">
+                <div class="container">
+                  <form id="frmAddUsers">
+
+                    <!--
+                    <div id="alert_error_message2" class="alert alert-danger alert-dismissible fade show" role="alert">
+                      <i class="fa fa-exclamation-triangle"></i>
+                      <strong>Alert!</strong> Please check in on some of the fields below.
+                      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    -->
+                    <p style="color:red"><i>*Required</i></p>
+                    <div class="row">
+                      <div class="col-xs-12 col-sm-6 col-md-6">
+                        <div class="form-group">
+                          <input type="password" name="password" id="password" class="form-control input-lg" placeholder="Old Password*">
+                          <div id="password_error_message" style="color:red"></div>
+                        </div>
+                        <div class="form-group">
+                          <input type="password" name="password" id="password" class="form-control input-lg" placeholder="Password*">
+                          <div id="password_error_message" style="color:red"></div>
+                        </div>
+                        <div class="form-group">
+                          <input type="password" name="password_confirmation" id="password_confirmation" class="form-control input-lg" placeholder="Confirm Password*">
+                          <div id="password_confirmation_error_message" style="color:red"></div>
+                        </div>
+                      </div>
+                      <div class="col-xs-12 col-sm-6 col-md-6">
+                                <div class="modal-body">
+                <div class="modal-body">
+                    <center>
+                    <img src="../files/1.JPG" name="aboutme" width="140" height="140" border="0" class="img-thumbnail"></a>
+
+                        
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                      </div>
+                      </center>
+                    </div>
+                        <button type="button" id="btnCancel"  class="btn btn-danger">Cancel</button>
+                        <button type="button" id="btnAddUsers" class="btn btn-primary">Save</button>
+                  
+               
+              </div>
+            </div>
+          </div>
+        </div>
+
     </div>
-  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -288,5 +380,25 @@ $(function() {
   <script type="text/javascript">
     $(document).ready(function(){
       $("#alert_error_message").hide();
+
+          var navItems = $('.admin-menu li > a');
+    var navListItems = $('.admin-menu li');
+    var allWells = $('.admin-content');
+    var allWellsExceptFirst = $('.admin-content:not(:first)');
+    
+    allWellsExceptFirst.hide();
+    navItems.click(function(e)
+    {
+        e.preventDefault();
+        navListItems.removeClass('active');
+        $(this).closest('li').addClass('active');
+        
+        allWells.hide();
+        var target = $(this).attr('data-target-id');
+        $('#' + target).show();
+    });
+
     });
   </script>
+
+
