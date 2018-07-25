@@ -89,7 +89,124 @@ https://bootsnipp.com/snippets/featured/vertical-admin-menu-single-page-jquery
 
 
 
+************************************************************************************************************************
 
+
+
+
+-
+"Profile + change password"
+
+https://bootsnipp.com/snippets/8M3Zn
+
+
+
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+ <div class="container">
+            <div class="row">
+                <div class="col-md-6  offset-md-0  toppad">
+                    <div class="card">
+                        <div class="card-body">
+                            <h3 class="card-title">Cambia tu clave</h3>
+                            <table class="table table-user-information ">
+                                <tbody>
+                                    <tr>
+                                        <td>Clave actual:</td>
+                                        <td>
+                                            <input
+                                            icon="password-icon"
+                                            name="password"
+                                            type="password"
+                                            value=''
+                                            focus
+                                            />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Calve nueva:</td>
+                                        <td>
+                                            <Input
+                                            icon="password-icon"
+                                            name="newPassword"
+                                            type="password"
+                                            value=''
+                                            />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Repita clave nueva:</td>
+                                        <td>
+                                            <Input
+                                            icon="password-icon"
+                                            name="newPassword"
+                                            type="password"
+                                            value=''
+                                            />
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>                          
+                            <a href="#" onClick={props.handleSubmitPass} class="btn btn-primary ml-2">Cambiar clave</a>
+                        </div>
+                    </div>
+                </div>
+                
+                
+                <div class="col-md-6  offset-md-0  toppad">
+                    <div class="card">
+                        <div class="card-body">
+                            <h3 class="card-title">Cambia tu clave</h3>
+                            <table class="table table-user-information ">
+                                <tbody>
+                                    <tr>
+                                        <td>Clave actual:</td>
+                                        <td>
+                                            <input
+                                            icon="password-icon"
+                                            name="password"
+                                            type="password"
+                                            value=''
+                                            focus
+                                            />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Calve nueva:</td>
+                                        <td>
+                                            <Input
+                                            icon="password-icon"
+                                            name="newPassword"
+                                            type="password"
+                                            value=''
+                                            />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Repita clave nueva:</td>
+                                        <td>
+                                            <Input
+                                            icon="password-icon"
+                                            name="newPassword"
+                                            type="password"
+                                            value=''
+                                            />
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>                          
+                            <a href="#" onClick={props.handleSubmitPass} class="btn btn-primary ml-2">Cambiar clave</a>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+
+-
 
 
 
