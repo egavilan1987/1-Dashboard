@@ -44,7 +44,7 @@
         <div class="modal-header">
           <h5 class="modal-title" id="usersModalLabel">User Information</h5>
           <center>
-            <a href="users.php">Edit&nbsp;</a>
+            <a href="editUser.php">Edit&nbsp;</a>
             <a href="users.php">Print</a>
           </center>
         </div>

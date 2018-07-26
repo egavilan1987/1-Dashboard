@@ -54,35 +54,55 @@
             <div class="card-body">       
               <div class="table-responsive">
                 <div class="container">
+
+
+
+
+
+
+<!------ Include the above in your HEAD tag ---------->
+
+ <div class="container">
+            <div class="row">
+                <div class="col-md-12  toppad  offset-md-0 ">
+                  <div id="alert_error_message" class="alert alert-danger alert-dismissible fade show" role="alert">
+                     <i class="fa fa-exclamation-triangle"></i>
+                    <strong>Alert!</strong> Please check in on some of the fields below.
+                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                       <span aria-hidden="true">&times;</span>
+                     </button>
+                   </div>
+                </div>
+
+
+
+                <div class="col-md-6  offset-md-0  toppad" >
+
+
+
+
                   <form id="frmAddUsers">
-                    <h2>Create New User</h2>
-                    <hr class="colorgraph">
-                    <div id="alert_error_message" class="alert alert-danger alert-dismissible fade show" role="alert">
-                      <i class="fa fa-exclamation-triangle"></i>
-                      <strong>Alert!</strong> Please check in on some of the fields below.
-                      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                      </button>
-                    </div>
+                    <h2>Edit User</h2>
+
                     <p style="color:red"><i>*Required</i></p>
                     <div class="row">
-                      <div class="col-xs-12 col-sm-6 col-md-6">
-                        <div class="form-group">
-                          <input type="text" name="user" id="user" class="form-control input-lg" placeholder="User*">
-                          <div id="username_error_message" style="color:red"></div>
-                        </div>
-                      </div>
-                      <div class="col-xs-12 col-sm-6 col-md-6">
-                        <div class="form-group">
-                          <input type="text" name="email" id="email" class="form-control input-lg" placeholder="E-mail*">
-                          <div id="email_error_message" style="color:red"></div>
-                        </div>
-                      </div>
                     </div>
+
+                    <div class="form-group">
+                      <input type="text" name="user" id="user" class="form-control input-lg" placeholder="User*">
+                      <div id="username_error_message" style="color:red"></div>
+                    </div>
+
+                    <div class="form-group">
+                      <input type="text" name="email" id="email" class="form-control input-lg" placeholder="E-mail*">
+                      <div id="email_error_message" style="color:red"></div>
+                    </div> 
+
                     <div class="form-group">
                       <input type="text" name="employee" id="employee" class="form-control input-lg" placeholder="Employee Name*">
                       <div id="employee_error_message" style="color:red"></div>
                     </div>
+
                     <div class="form-group">
                       <select name="role" id="role" class="form-control">
                         <option value="" hidden>Role*</option>
@@ -91,24 +111,127 @@
                       </select>
                       <div id="role_error_message" style="color:red"></div>
                     </div>
+
+                    <div class="form-group">
+                      <select name="status" id="status" class="form-control">
+                        <option value="" hidden>Status*</option>
+                        <option>Active</option>
+                        <option>Inative</option>
+                      </select>
+                      <div id="role_error_message" style="color:red"></div>
+                    </div>
                         <button type="button" id="btnCancel"  class="btn btn-danger">Cancel</button>
                         <button type="button" id="btnAddUsers" class="btn btn-primary">Save</button>
                   </form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                </div>
+                <div class="col-md-6  offset-md-0  toppad">
+                  <dt><label for="upload-profile-picture">Profile picture</label></dt>
+                    <div align="center">
+                                               
+                            
+                            <dd class="avatar-upload-container clearfix">
+                              <img class="img-thumbnail" src="https://avatars3.githubusercontent.com/u/29561850?s=400&amp;u=d29c527f6afa334781a92b5ee88cfad35ffd1d00&amp;v=4" width="200" height="200" alt="@egavilan1987" />
+                              <div class="avatar-upload">
+                                <br>
+                                  <input id="upload-profile-picture" type="file" class="manual-file-chooser width-full height-full ml-0 js-manual-file-chooser">
+                                
+                              </div> <!-- /.avatar-upload -->
+                            </dd>
+                            <a href="#" class="btn btn-primary ml-2">Save new profile image.</a>
+                       
+                    </div>
+                </div>
+
+
+
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                 </div>
               </div>
             </div>
           </div>
         </div>
         <!-- Example DataUsers Card-->
-        <div class="col-md-9 well admin-content" id="widgets">
+        <div class="col-md-6 well admin-content" id="widgets">
           <!-- Example DataUsers Card-->
           <div class="card mb-3">
             <div class="card-header">
-              <i class="fa fa-pencil"></i>  Edit Password</div>
+              <i class="fa fa-pencil"></i>  Edit User Password</div>
             <div class="card-body">       
               <div class="table-responsive">
                 <div class="container">
-                  <form id="frmAddUsers">
+
+
+
+
+
+                  <form id="frmEditUserPassword">
 
                     <!--
                     <div id="alert_error_message2" class="alert alert-danger alert-dismissible fade show" role="alert">
@@ -121,11 +244,7 @@
                     -->
                     <p style="color:red"><i>*Required</i></p>
                     <div class="row">
-                      <div class="col-xs-12 col-sm-6 col-md-6">
-                        <div class="form-group">
-                          <input type="password" name="password" id="password" class="form-control input-lg" placeholder="Old Password*">
-                          <div id="password_error_message" style="color:red"></div>
-                        </div>
+                      <div class="col-xs-12 col-sm-12 col-md-12">
                         <div class="form-group">
                           <input type="password" name="password" id="password" class="form-control input-lg" placeholder="Password*">
                           <div id="password_error_message" style="color:red"></div>
@@ -134,26 +253,11 @@
                           <input type="password" name="password_confirmation" id="password_confirmation" class="form-control input-lg" placeholder="Confirm Password*">
                           <div id="password_confirmation_error_message" style="color:red"></div>
                         </div>
+                          <button type="button" id="btnCancel"  class="btn btn-danger">Cancel</button>
+                          <button type="button" id="btnAddUsers" class="btn btn-primary">Save</button>
                       </div>
-                      <div class="col-xs-12 col-sm-6 col-md-6">
-                                <div class="modal-body">
-                <div class="modal-body">
-                    <center>
-                    <img src="../files/1.JPG" name="aboutme" width="140" height="140" border="0" class="img-thumbnail"></a>
-
-                        
-                      <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                      </div>
-                      </center>
                     </div>
-                        <button type="button" id="btnCancel"  class="btn btn-danger">Cancel</button>
-                        <button type="button" id="btnAddUsers" class="btn btn-primary">Save</button>
-                  
-               
-              </div>
-            </div>
-          </div>
+                </form>
         </div>
 
     </div>

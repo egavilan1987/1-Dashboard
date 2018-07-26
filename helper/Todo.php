@@ -6,11 +6,7 @@ BECAUSE TODAY WE ARE USING A NEW SYSTEM IN MY JOBPLACE MAYBE THERE WILL NOT BE T
 
 Coding
 	
-	*Study the add users code many times.
-	*Check the whole code.
-	*Study Sales and Inventory Sales code.
-	*IF POSIBLE CODE.
-
+	*Study Bootstrap Grids
 
 RESEACH
 	*Alertify title
