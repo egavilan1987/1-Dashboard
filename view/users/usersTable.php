@@ -68,7 +68,7 @@ $result=mysqli_query($connection,$sql);
             <?php } ?>
           </td> 
           <td style="text-align: center;">
-            <span class="btn btn-primary btn-xs" data-toggle="modal" data-target="#modalEditar" onclick="viewData('<?php echo $row[0]; ?>')">
+            <span class="btn btn-primary btn-xs" data-toggle="modal" data-target="#modalView" onclick="addData('<?php echo $row[0]; ?>')">
               <span class="fa fas fa-eye"></span>
             </span>
             <span class="btn btn-success btn-xs" data-toggle="modal" data-target="#modalEditar" onclick="updateData('<?php echo $row[0]; ?>')">

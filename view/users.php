@@ -17,7 +17,7 @@
       <a href="addUsers.php" class="btn btn-success" role="button" aria-pressed="true"><span class="fa fa-user-plus"></span>Add New User</a>
 
       <!-- Button trigger modal -->
-      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#usersModal">
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalView">
         Launch demo modal
       </button>
 
@@ -38,7 +38,7 @@
     </div>
   </div>
   <!-- User Detail Modal -->
-  <div class="modal fade" id="usersModal" tabindex="-1" role="dialog" aria-labelledby="usersModalLabel" aria-hidden="true">
+  <div class="modal fade" id="modalView" tabindex="-1" role="dialog" aria-labelledby="usersModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
