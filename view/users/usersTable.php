@@ -6,7 +6,7 @@ require_once "../../model/connection.php";
       $c=new Connect();
       $connection=$c->connection();
 
-$sql="SELECT id_user, user_name,
+$sql="SELECT id_user,
 user_name,
 full_name,
 email,
@@ -32,12 +32,12 @@ $result=mysqli_query($connection,$sql);
     </thead>
     <tfoot style="background-color: #ccc;color: white; font-weight: bold;">
       <tr>
-        <td>ID</td>
-        <td>Users</td>
-        <td>Roles</td>
-        <td>Created By</td>
-        <td>Last Update By</td>
-        <td>Created Date</td>
+        <td>User</td>
+        <td>Profile Image</td>
+        <td>Full Name</td>
+        <td>Email</td>
+        <td>Registration Date/Time</td>
+        <td>Status</td>
         <td>Actions</td>
       </tr>
     </tfoot>
@@ -49,8 +49,8 @@ $result=mysqli_query($connection,$sql);
           <td style="text-align: center;"><?php echo $row[1] ?></td>
           <td style="text-align: center;"><img src="../files/1.JPG" class="rounded" alt="Cinque Terre" width="45" height="45"></td>
           <td style="text-align: center;"><?php echo $row[2] ?></td>
+          <td style="text-align: center;"><?php echo $row[3] ?></td>
           <td style="text-align: center;"><?php echo $row[4] ?></td>
-          <td style="text-align: center;"><?php echo $row[5] ?></td>
           <td style="text-align: center;">
             <?php if ($row[5]=='Active'){?>
               <span class="btn btn-success btn-sm" onclick="updateStatus('<?php echo $row[0]; ?>')">
@@ -68,12 +68,12 @@ $result=mysqli_query($connection,$sql);
             <?php } ?>
           </td> 
           <td style="text-align: center;">
-            <span class="btn btn-primary btn-xs" data-toggle="modal" data-target="#modalView" onclick="addData('<?php echo $row[0]; ?>')">
+            <span class="btn btn-primary btn-xs" data-toggle="modal" data-target="#modalView" onclick="addUser('<?php echo $row[0]; ?>')">
               <span class="fa fas fa-eye"></span>
             </span>
-            <span class="btn btn-success btn-xs" data-toggle="modal" data-target="#modalEditar" onclick="updateData('<?php echo $row[0]; ?>')">
-              <span class="fa fa-pencil-square-o"></span>
-            </span>
+                <a class="btn btn-success btn-xs" href="editUser.php?id=<?php echo $row[0]; ?>">
+                  <span  class="fa fa-pencil-square-o"></span>
+                </a>
             <span class="btn btn-danger btn-xs" onclick="deleteData('<?php echo $row[0]; ?>')">
               <span class="fa fa-trash"></span>
             </span>

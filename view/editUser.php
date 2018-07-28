@@ -1,8 +1,13 @@
 <html>
  <head>
   <title>Edit User</title>
-  <?php require_once "menu.php"; ?>
+  <?php require_once "menu.php"; 
+    $id = $_GET['id'];
+  ?>
+
  </head>
+
+
  <body class="fixed-nav sticky-footer bg-dark" id="page-top">
   <div class="content-wrapper">
     <div class="container-fluid">
@@ -89,22 +94,22 @@
                     </div>
 
                     <div class="form-group">
-                      <input type="text" name="user" id="user" class="form-control input-lg" placeholder="User*">
+                      <input type="text" name="updateUserName" id="updateUserName" class="form-control input-lg" placeholder="User*">
                       <div id="username_error_message" style="color:red"></div>
                     </div>
 
                     <div class="form-group">
-                      <input type="text" name="email" id="email" class="form-control input-lg" placeholder="E-mail*">
+                      <input type="text" name="updateEmail" id="updateEmail" class="form-control input-lg" placeholder="E-mail*">
                       <div id="email_error_message" style="color:red"></div>
                     </div> 
 
                     <div class="form-group">
-                      <input type="text" name="employee" id="employee" class="form-control input-lg" placeholder="Employee Name*">
+                      <input type="text" name="updateFullName" id="updateFullName" class="form-control input-lg" placeholder="Employee Name*">
                       <div id="employee_error_message" style="color:red"></div>
                     </div>
 
                     <div class="form-group">
-                      <select name="role" id="role" class="form-control">
+                      <select name="updateRole" id="updateRole" class="form-control">
                         <option value="" hidden>Role*</option>
                         <option>Admin</option>
                         <option>User</option>
@@ -113,19 +118,17 @@
                     </div>
 
                     <div class="form-group">
-                      <select name="status" id="status" class="form-control">
+                      <select name="updateStatusa" id="updateStatusa" class="form-control">
                         <option value="" hidden>Status*</option>
                         <option>Active</option>
                         <option>Inative</option>
                       </select>
-                      <div id="role_error_message" style="color:red"></div>
+                      <div id="status_error_message" style="color:red"></div>
                     </div>
+
                         <button type="button" id="btnCancel"  class="btn btn-danger">Cancel</button>
                         <button type="button" id="btnAddUsers" class="btn btn-primary">Save</button>
                   </form>
-
-
-
 
 
 
@@ -253,8 +256,8 @@
                           <input type="password" name="password_confirmation" id="password_confirmation" class="form-control input-lg" placeholder="Confirm Password*">
                           <div id="password_confirmation_error_message" style="color:red"></div>
                         </div>
-                          <button type="button" id="btnCancel"  class="btn btn-danger">Cancel</button>
-                          <button type="button" id="btnAddUsers" class="btn btn-primary">Save</button>
+                          <button type="button" id="btnCancel2"  class="btn btn-danger">Cancel</button>
+                          <button type="button" id="btnAddUsers2" class="btn btn-primary">Save</button>
                       </div>
                     </div>
                 </form>
@@ -503,6 +506,42 @@ $(function() {
     });
 
     });
+
+    var idUser ="<?php echo $id; ?>";
+    addUser(idUser);
+
+
+
+    function addUser(idUser){
+      $.ajax({
+        type:"POST",
+        data:"idUser=" + idUser,
+        url:"../process/users/getUserData.php",
+        success:function(r){
+          
+          data=jQuery.parseJSON(r);
+              //alert(r);
+          $('#idUser').val(data['id_user']);
+          $('#updateUserName').val(data['user_name']);
+          $('#updateEmail').val(data['email']);
+          $('#updateFullName').val(data['full_name']);
+          $('#updateRole').val(data['user_role']);
+          $('#updateStatus').val(data['status']);  
+
+
+    
+
+
+
+
+
+
+
+             
+        }
+      });
+    }
+
   </script>
 
 

@@ -15,12 +15,6 @@
         <li class="breadcrumb-item active">Users</li>
       </ol>
       <a href="addUsers.php" class="btn btn-success" role="button" aria-pressed="true"><span class="fa fa-user-plus"></span>Add New User</a>
-
-      <!-- Button trigger modal -->
-      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalView">
-        Launch demo modal
-      </button>
-
       <br>
       <br>
       <!-- DataUsers Card-->
@@ -44,38 +38,56 @@
         <div class="modal-header">
           <h5 class="modal-title" id="usersModalLabel">User Information</h5>
           <center>
-            <a href="editUser.php">Edit&nbsp;</a>
-            <a href="users.php">Print</a>
+            <!-- <a href="editUser.php">Edit&nbsp;</a> -->
+            <a class="btn btn-success btn-xs" href="editUser.php?id=idUser">
+                  <span  class="fa fa-pencil-square-o"></span>
+            </a>
+            <a class="btn btn-secondary btn-xs" href="editUser.php?id=<?php echo $row[0]; ?>">
+                  <span  class="fa fa-print"></span>
+            </a>
           </center>
         </div>
         <div class="modal-body">
                 <div class="modal-body">
                     <center>
-                    <img src="../files/1.JPG" name="aboutme" width="140" height="140" border="0" class="img-thumbnail"></a>
-                    <div class="media-heading"><Strong>Enmanuel De Jesus Gavilan Cruz</Strong></div>
-                    <div class="media-heading">Admin</div>
-                    <div>egavilan</div>
-                    <div>enmanuelgc@gmail.com</div>
-                    <center>
+                    <img src="../files/1.JPG" name="aboutme" width="140" height="140" border="0" class="img-thumbnail">
+                    <br>
+                    <input type="text" hidden="" id="idUser" name="idUser">
+                    <div class="media-heading">
+                      <Strong ><h4>
+                        <div id="viewFullName"></div></h4>
+                      </Strong>
+                    </div>
+
+                    <font color="red" id="viewStatus"></font>
+                    <div id="viewRole"></div>
+                    <div id="viewUser"></div>
+                    <div id="viewEmail"></div>
+
                     <hr>                    
                       <tr>
-                        <td>Created by:</td>
-                        <td>egavilan</td>
+                        <Strong>
+                          <td>Created by:</td>
+                        </Strong>
+                        <div id="viewCreatedBy"></div>
                       </tr>
-                      <br>
                       <tr>
-                        <td>Date created:</td>
-                        <td>06/23/2013</td>
+                        <Strong>
+                          <td>Date created:</td>
+                        </Strong>
+                        <div id="viewDateCreated"></div>
                       </tr>
-                      <br>
                       <tr>
-                        <td>Updated by:</td>
-                        <td>egavilan</td>
+                        <Strong>
+                          <td>Last Update by:</td>
+                        </Strong>
+                        <div id="viewUpdatedBy"></div>
                       </tr>
-                      <br>
                       <tr>
-                        <td>Date Updated</td>
-                        <td>01/24/1988</td>
+                        <Strong>
+                          <td>Last update date:</td>
+                        </Strong>
+                        <div id="viewUpdatedDate"></div>
                       </tr>
                       <br>
                       <br>
@@ -118,6 +130,30 @@
       });
       });
     });
+
+    function addUser(idUser){
+      $.ajax({
+        type:"POST",
+        data:"idUser=" + idUser,
+        url:"../process/users/getUserData.php",
+        success:function(r){
+          data=jQuery.parseJSON(r);
+              //alert(r);
+          $('#idUser').val(data['id_user']);
+          $('#viewFullName').text(data['full_name']);
+          $('#viewUser').text(data['user_name']);
+          $('#viewStatus').text(data['status']);
+          $('#viewRole').text(data['user_role']);
+          $('#viewEmail').text(data['email']);
+          $('#viewCreatedBy').text(data['created_by_user']);
+          $('#viewDateCreated').text(data['created_date']);
+          $('#viewUpdatedBy').text(data['updated_by_user']);
+          $('#viewUpdatedDate').text(data['updated_date']);
+
+        }
+      });
+    }
+
 
     function deleteData(idUser){
       alertify.confirm('Delete Registered User','Do you want to delete the user?', function(){ 
