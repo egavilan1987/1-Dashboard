@@ -38,11 +38,33 @@
         <div class="modal-header">
           <h5 class="modal-title" id="usersModalLabel">User Information</h5>
           <center>
-            <!-- <a href="editUser.php">Edit&nbsp;</a> -->
-            <a class="btn btn-success btn-xs" href="editUser.php?id=idUser">
-                  <span  class="fa fa-pencil-square-o"></span>
+
+
+          <div class="modal-body">
+            <form action="editUser.php" method="get">
+              <input type="text"  hidden="" id="idUser" name="idUser">
+              <input type="submit" id="submit" value="click">
+
+
+
+              
+
+            </form>
+          </div>
+
+
+            <?php echo $idUser = 13; ?>
+            
+            <a class="btn btn-success btn-xs" href="editUser.php?id=<?php echo $idUser; ?>">
+              <span  class="fa fa-pencil-square-o"></span>
             </a>
-            <a class="btn btn-secondary btn-xs" href="editUser.php?id=<?php echo $row[0]; ?>">
+
+
+
+
+
+
+            <a class="btn btn-secondary btn-xs" href="editUser.php?id=<?php echo $idUser; ?>">
                   <span  class="fa fa-print"></span>
             </a>
           </center>
@@ -52,7 +74,11 @@
                     <center>
                     <img src="../files/1.JPG" name="aboutme" width="140" height="140" border="0" class="img-thumbnail">
                     <br>
-                    <input type="text" hidden="" id="idUser" name="idUser">
+                    
+
+
+                    
+
                     <div class="media-heading">
                       <Strong ><h4>
                         <div id="viewFullName"></div></h4>
@@ -98,6 +124,8 @@
       </div>
     </div>
   </div>
+   </div>
+    </div>
   <!--End User Detail Modal -->
 </body>
 </html>
@@ -138,7 +166,6 @@
         url:"../process/users/getUserData.php",
         success:function(r){
           data=jQuery.parseJSON(r);
-              //alert(r);
           $('#idUser').val(data['id_user']);
           $('#viewFullName').text(data['full_name']);
           $('#viewUser').text(data['user_name']);

@@ -71,7 +71,7 @@ $result=mysqli_query($connection,$sql);
             <span class="btn btn-primary btn-xs" data-toggle="modal" data-target="#modalView" onclick="addUser('<?php echo $row[0]; ?>')">
               <span class="fa fas fa-eye"></span>
             </span>
-                <a class="btn btn-success btn-xs" href="editUser.php?id=<?php echo $row[0]; ?>">
+                <a class="btn btn-success btn-xs" href="editUser.php?idUser=<?php echo $row[0]; ?>">
                   <span  class="fa fa-pencil-square-o"></span>
                 </a>
             <span class="btn btn-danger btn-xs" onclick="deleteData('<?php echo $row[0]; ?>')">

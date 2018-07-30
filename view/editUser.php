@@ -2,7 +2,7 @@
  <head>
   <title>Edit User</title>
   <?php require_once "menu.php"; 
-    $id = $_GET['id'];
+    $id = $_GET['idUser'];
   ?>
 
  </head>
