@@ -14,7 +14,8 @@
         </li>
         <li class="breadcrumb-item active">Users</li>
       </ol>
-      <a href="addUsers.php" class="btn btn-success" role="button" aria-pressed="true"><span class="fa fa-user-plus"></span>Add New User</a>
+      <a href="addUsers.php" class="btn btn-success" role="button" aria-pressed="true"><span class="fa fa-user-plus"></span> Add New User</a>
+      <a href="addUsers.php" class="btn btn-primary" role="button" aria-pressed="true"><span class="fa fa-print"></span> Print Users</a>
       <br>
       <br>
       <!-- DataUsers Card-->
@@ -37,37 +38,23 @@
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="usersModalLabel">User Information</h5>
-          <center>
+
+          <span style="padding-left:150px;"></span>
 
 
-          <div class="modal-body">
             <form action="editUser.php" method="get">
               <input type="text"  hidden="" id="idUser" name="idUser">
-              <input type="submit" id="submit" value="click">
-
-
-
-              
-
+              <button class="btn btn-secondary btn-xs" type="submit"><i class="fa fa-pencil-square-o"></i> Edit</button>        
             </form>
-          </div>
 
-
-            <?php echo $idUser = 13; ?>
-            
-            <a class="btn btn-success btn-xs" href="editUser.php?id=<?php echo $idUser; ?>">
-              <span  class="fa fa-pencil-square-o"></span>
-            </a>
+            <form action="printUser.php" method="get">
+              <input  type="text"  hidden="" id="idPrintUser" name="idPrintUser">
+              <button class="btn btn-secondary btn-xs" type="submit"><i class="fa fa-print"></i> Print</button>
+            </form>
 
 
 
 
-
-
-            <a class="btn btn-secondary btn-xs" href="editUser.php?id=<?php echo $idUser; ?>">
-                  <span  class="fa fa-print"></span>
-            </a>
-          </center>
         </div>
         <div class="modal-body">
                 <div class="modal-body">
@@ -85,7 +72,7 @@
                       </Strong>
                     </div>
 
-                    <font color="red" id="viewStatus"></font>
+                    <font class="border border-danger" id="viewStatus"></font>
                     <div id="viewRole"></div>
                     <div id="viewUser"></div>
                     <div id="viewEmail"></div>
@@ -165,8 +152,9 @@
         data:"idUser=" + idUser,
         url:"../process/users/getUserData.php",
         success:function(r){
-          data=jQuery.parseJSON(r);
+          data=jQuery.parseJSON(r); 
           $('#idUser').val(data['id_user']);
+          $('#idPrintUser').val(data['id_user']);
           $('#viewFullName').text(data['full_name']);
           $('#viewUser').text(data['user_name']);
           $('#viewStatus').text(data['status']);

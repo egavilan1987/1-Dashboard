@@ -102,10 +102,34 @@
 			
 			$c=new Connect();
 			$connection=$c->connection();
+
 			
 			$sql="UPDATE users SET user_name='$data[1]',
-						user_role='$data[2]'
+						email='$data[2]',
+						full_name='$data[3]',
+						user_role='$data[4]',
+						status='$data[5]',
+						updated_by_user = 'admin',
+						updated_date=NOW()
 						WHERE id_user='$data[0]'";
+
+
+
+			return mysqli_query($connection,$sql);	
+		}
+
+		public function updatePassword($data){
+			
+			$c=new Connect();
+			$connection=$c->connection();
+
+			
+			$sql="UPDATE users SET password='$data[1]',
+								   updated_date=NOW()
+						WHERE id_user='$data[0]'";
+
+
+
 			return mysqli_query($connection,$sql);	
 		}
 		public function deleteUser($idUser){
@@ -119,3 +143,5 @@
 		}
 	}
  ?>
+
+
