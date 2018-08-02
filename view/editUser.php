@@ -26,11 +26,11 @@
       <div class="col-md-3">
             <ul class="nav nav-pills nav-stacked admin-menu">            
                 <li class="active">
-                  <a href="#" class="btn btn-primary btn-ms" role="button" aria-pressed="true" data-target-id="home"><i class="fa fa-cog" aria-hidden="true"></i>&nbsp;&nbsp;Profile Settings &nbsp;&nbsp;&nbsp;</a>
+                  <a href="#" class="btn btn-primary btn-ms" role="button" aria-pressed="true" data-target-id="home"><i class="fa fa-cog" aria-hidden="true"></i>&nbsp;&nbsp;Profile Settings &nbsp;&nbsp;&nbsp;&nbsp;</a>
                 </li>
                 <br><br>
                 <li>
-                  <a href="#" class="btn btn-primary btn-ms" role="button" aria-pressed="true" data-target-id="widgets"><i class="fa fa-lock" aria-hidden="true"></i> &nbsp;Change Passworld</a>
+                  <a href="#" class="btn btn-primary btn-ms" role="button" aria-pressed="true" data-target-id="widgets"><i class="fa fa-lock" aria-hidden="true"></i> &nbsp;&nbsp;Change Passworld</a>
                 </li>
             </ul>
         </div>
@@ -353,9 +353,10 @@ $(function() {
             data:data,
             url:"../process/users/updatePassword.php",
             success:function(r){
-              alert(r);
             if(r==1){
-              alertify.success("User information successfully updated!");
+              $('#frmEditUserPassword')[0].reset();
+              alertify.success("Password changed sucessfully!");
+
           }else{
               alertify.error("Could not update the user information.");
               }
@@ -366,7 +367,15 @@ $(function() {
           $("#alert_password_error_message").show();
           return false; 
         }
-    });  
+    });
+      $('#btnCancelPassword').click(function(){
+        alertify.confirm('Cancel User Information Updating.','Do you want to cancel user information updating?', function(){
+         window.location.replace("users.php");
+        }, function(){ 
+          alertify.success("Operation Canceled!");
+        });
+    });
+
 });
 </script>
 </script>

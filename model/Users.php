@@ -109,7 +109,7 @@
 						full_name='$data[3]',
 						user_role='$data[4]',
 						status='$data[5]',
-						updated_by_user = 'admin',
+						updated_by_user = 'adminUserExample',
 						updated_date=NOW()
 						WHERE id_user='$data[0]'";
 
@@ -125,6 +125,7 @@
 
 			
 			$sql="UPDATE users SET password='$data[1]',
+								   updated_by_user = 'adminUserExample',
 								   updated_date=NOW()
 						WHERE id_user='$data[0]'";
 

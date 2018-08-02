@@ -3,12 +3,18 @@
 	require_once "../../model/connection.php";
 	require_once "../../model/Users.php";
 	$obj= new users;
-		
-		print_r($_POST);
+
+	$updatePassword=sha1($_POST['password']);
+	$createdUser="Example User";
 
 	$userPassword=array(
 				$_POST['idUpdatePassword'],
-			    $_POST['password']
+			    $updatePassword
 				);  
 	echo $obj->updatePassword($userPassword);
  ?>
+
+
+
+
+

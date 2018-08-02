@@ -11,7 +11,8 @@ user_name,
 full_name,
 email,
 created_date,
-status
+status,
+image
 from users";
 $result=mysqli_query($connection,$sql);
 ?>
@@ -47,7 +48,14 @@ $result=mysqli_query($connection,$sql);
         ?>
         <tr >
           <td style="text-align: center;"><?php echo $row[1] ?></td>
-          <td style="text-align: center;"><img src="../files/1.JPG" class="rounded" alt="Cinque Terre" width="45" height="45"></td>
+          <td style="text-align: center;">
+            <?php 
+              $showImage=explode("/", $row[6]) ; 
+              $imgPath=$showImage[1]."/".$showImage[2]."/".$showImage[3]."/".$showImage[4];
+
+            ?>
+            <img class="rounded" alt="Cinque Terre" width="45" height="45" src="<?php echo $imgPath ?>">
+          </td>
           <td style="text-align: center;"><?php echo $row[2] ?></td>
           <td style="text-align: center;"><?php echo $row[3] ?></td>
           <td style="text-align: center;"><?php echo $row[4] ?></td>
