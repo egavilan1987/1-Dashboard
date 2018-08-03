@@ -59,10 +59,18 @@
         <div class="modal-body">
                 <div class="modal-body">
                     <center>
+                      <!--
                     <img src="../files/1.JPG" name="aboutme" width="140" height="140" border="0" class="img-thumbnail">
+                    <div id="imagePath"></div>
+                    -->
                     <br>
-                    
 
+
+
+                    
+                    
+                      <div id="viewImage"></div>
+                    
 
                     
 
@@ -159,11 +167,23 @@
           $('#viewUser').text(data['user_name']);
           $('#viewStatus').text(data['status']);
           $('#viewRole').text(data['user_role']);
+          
           $('#viewEmail').text(data['email']);
           $('#viewCreatedBy').text(data['created_by_user']);
           $('#viewDateCreated').text(data['created_date']);
           $('#viewUpdatedBy').text(data['updated_by_user']);
           $('#viewUpdatedDate').text(data['updated_date']);
+
+
+          //$('#imagePath').text(data['imagePath']);
+
+
+
+
+          $('#viewImage').prepend('<img class="img-thumbnail" id="imgp" src="' + data['imagePath'] + '"  width="140" height="140"/>');
+
+
+
 
         }
       });
@@ -195,6 +215,14 @@
 
 <script type="text/javascript">
   $(document).ready(function(){
+
+
+    $('#modalView').on('hidden.bs.modal', function () {
+
+     
+     $("#viewImage").empty();
+});
+
     
   });
 </script>

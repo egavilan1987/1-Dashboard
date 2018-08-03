@@ -12,6 +12,7 @@
 							user_role,
 							password,
 							status,
+							image,
 							created_by_user,
 							created_date)
 						VALUES ('$data[0]',
@@ -20,6 +21,7 @@
 							'$data[3]',
 							'$data[4]',
 							'Inactive',
+							'../../files/profile_images/default-avatar.jpg',
 							'$data[5]',
 							 NOW())";
 
@@ -70,8 +72,8 @@
 					email,
 					full_name,
 					user_role,
-					password,
 					status,
+					image,
 					created_by_user,
 					created_date,
 					updated_by_user,
@@ -82,6 +84,9 @@
 			$result=mysqli_query($connection,$sql);
 			
 			$row=mysqli_fetch_row($result);
+
+			$showImage=explode("/", $row[6]) ; 
+            $imgPath=$showImage[1]."/".$showImage[2]."/".$showImage[3]."/".$showImage[4];
 			
 			$userData=array(
 						'id_user' => $row[0],
@@ -89,8 +94,8 @@
 						'email' => $row[2],
 						'full_name' => $row[3],
 						'user_role' => $row[4],
-						'password' => $row[5],
-						'status' => $row[6],
+						'status' => $row[5],
+						'imagePath' => $imgPath,
 						'created_by_user' => $row[7],
 						'created_date' => $row[8],
 						'updated_by_user' => $row[9],
