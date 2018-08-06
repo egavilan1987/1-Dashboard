@@ -14,10 +14,3 @@
 				);  
 	echo $obj->updateUser($userArray);
  ?>
-
-
-
-                                
-                                
-                                
-                                

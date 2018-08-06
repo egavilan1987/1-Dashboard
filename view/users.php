@@ -15,7 +15,7 @@
         <li class="breadcrumb-item active">Users</li>
       </ol>
       <a href="addUsers.php" class="btn btn-success" role="button" aria-pressed="true"><span class="fa fa-user-plus"></span> Add New User</a>
-      <a href="addUsers.php" class="btn btn-primary" role="button" aria-pressed="true"><span class="fa fa-print"></span> Print Users</a>
+      <a href="http://192.168.0.106:8080/callcenter/1-Dashboard/view/dompdf/printUsers.php" target="_blank" class="btn btn-primary" role="button" aria-pressed="true"><span class="fa fa-print"></span> Print Users</a>
       <br>
       <br>
       <!-- DataUsers Card-->
@@ -167,24 +167,12 @@
           $('#viewUser').text(data['user_name']);
           $('#viewStatus').text(data['status']);
           $('#viewRole').text(data['user_role']);
-          
+          $('#viewImage').prepend('<img class="img-thumbnail" id="imgp" src="' + data['imagePath'] + '"  width="140" height="140"/>');
           $('#viewEmail').text(data['email']);
           $('#viewCreatedBy').text(data['created_by_user']);
           $('#viewDateCreated').text(data['created_date']);
           $('#viewUpdatedBy').text(data['updated_by_user']);
-          $('#viewUpdatedDate').text(data['updated_date']);
-
-
-          //$('#imagePath').text(data['imagePath']);
-
-
-
-
-          $('#viewImage').prepend('<img class="img-thumbnail" id="imgp" src="' + data['imagePath'] + '"  width="140" height="140"/>');
-
-
-
-
+          $('#viewUpdatedDate').text(data['updated_date']);       
         }
       });
     }

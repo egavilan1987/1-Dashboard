@@ -123,6 +123,20 @@
 			return mysqli_query($connection,$sql);	
 		}
 
+		public function updateImage($data){
+			
+			$c=new Connect();
+			$connection=$c->connection();
+
+			
+			$sql="UPDATE users SET image='$data[1]',
+						updated_date=NOW()
+						WHERE id_user='$data[0]'";
+
+
+
+			return mysqli_query($connection,$sql);	
+		}
 		public function updatePassword($data){
 			
 			$c=new Connect();

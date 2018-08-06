@@ -26,15 +26,19 @@
       <div class="col-md-3">
             <ul class="nav nav-pills nav-stacked admin-menu">            
                 <li class="active">
-                  <a href="#" class="btn btn-primary btn-ms" role="button" aria-pressed="true" data-target-id="home"><i class="fa fa-cog" aria-hidden="true"></i>&nbsp;&nbsp;Profile Settings &nbsp;&nbsp;&nbsp;&nbsp;</a>
+                  <a href="#" class="btn btn-primary btn-ms" role="button" aria-pressed="true" data-target-id="profile"><i class="fa fa-cog" aria-hidden="true"></i>&nbsp;&nbsp;Profile Settings &nbsp;&nbsp;&nbsp;&nbsp;</a>
                 </li>
                 <br><br>
                 <li>
-                  <a href="#" class="btn btn-primary btn-ms" role="button" aria-pressed="true" data-target-id="widgets"><i class="fa fa-lock" aria-hidden="true"></i> &nbsp;&nbsp;Change Passworld</a>
+                  <a href="#" class="btn btn-primary btn-ms" role="button" aria-pressed="true" data-target-id="updatePassword"><i class="fa fa-lock" aria-hidden="true"></i> &nbsp;&nbsp;Change Passworld</a>
+                </li>
+                <br><br>
+                <li>
+                  <a href="#" class="btn btn-primary btn-ms" role="button" aria-pressed="true" data-target-id="profileImage"><i class="fa fa-picture-o" aria-hidden="true"></i> &nbsp;&nbsp;Profile Image&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
                 </li>
             </ul>
         </div>
-        <div class="col-md-9 well admin-content" id="home">        
+        <div class="col-md-9 well admin-content" id="profile">        
           <!-- Example DataUsers Card-->
         <div class="card mb-3">
         <div class="card-header">
@@ -54,7 +58,7 @@
                                </button>
                              </div>
                           </div>
-                          <div class="col-md-6  offset-md-0  toppad" >
+                          <div class="col-xs-12 col-sm-12 col-md-12" >
                             <form id="frmEditUser">
                               <h2>Edit User</h2>
 
@@ -105,20 +109,7 @@
                             </form>
                           </div>
 
-                          <div class="col-md-6  offset-md-0  toppad">
-                            <dt><label for="upload-profile-picture">Profile picture</label></dt>
-                              <div align="center">                                             
-                                      <dd class="avatar-upload-container clearfix">
-                                        <img class="img-thumbnail" src="https://avatars3.githubusercontent.com/u/29561850?s=400&amp;u=d29c527f6afa334781a92b5ee88cfad35ffd1d00&amp;v=4" width="200" height="200" alt="@egavilan1987" />
-                                        <div class="avatar-upload">
-                                          <br>
-                                            <input id="upload-profile-picture" type="file" class="manual-file-chooser width-full height-full ml-0 js-manual-file-chooser">
-                                          
-                                        </div> <!-- /.avatar-upload -->
-                                      </dd>
-                                      <a href="#" class="btn btn-primary ml-2">Save new profile image.</a>                       
-                              </div>
-                          </div>
+
                       </div>
                   </div>
                 </div>
@@ -127,11 +118,11 @@
           </div>
         </div>
         <!-- Example DataUsers Card-->
-        <div class="col-md-9 well admin-content" id="widgets">
+        <div class="col-md-9 well admin-content" id="updatePassword">
           <!-- Example DataUsers Card-->
           <div class="card mb-3">
             <div class="card-header">
-              <i class="fa fa-pencil"></i>  Edit User Password</div>
+              <i class="fa fa-lock"></i>  Edit User Password</div>
             <div class="card-body">       
               <div class="table-responsive">
                 <div class="container">
@@ -167,6 +158,30 @@
               </div>
             </div>
           </div>
+        </div>
+
+        <div class="col-md-9 well admin-content" id="profileImage">        
+          <!-- Example DataUsers Card-->
+        <div class="card mb-3">
+        <div class="card-header">
+          <i class="fa fa-picture-o"></i>  Edit Profile Image
+        </div><br>                               
+           <form align="center" id="frmEditImage">
+            <h2>User Profile Picture</h2>
+            <br>    
+            <div id="viewImage"></div>
+              <div class="avatar-upload">
+                <input type="text" hidden="" id="idUserImage" name="idUserImage">
+                <br><br>
+                <input type="file" id="image" name="image">                                         
+              </div>  
+              <br>                                    
+            <div>
+                <button type="button" id="btnSaveImage" class="btn btn-primary">Save new profile image</button>
+            </div>
+          </form>
+        </div>                      
+         </div>
         </div>
       </div>
     </div>
@@ -375,6 +390,33 @@ $(function() {
           alertify.success("Operation Canceled!");
         });
     });
+      $('#btnSaveImage').click(function(){
+
+        var formData = new FormData(document.getElementById("frmEditImage"));
+
+        $.ajax({
+          url: "../process/users/updateProfile.php",
+          type: "post",
+          dataType: "html",
+          data: formData,
+          cache: false,
+          contentType: false,
+          processData: false,
+
+          success:function(r){
+            if(r == 1){
+              $('#viewImage').empty();
+              $("#image").val("");
+              addUser(idUser);
+
+              alertify.success("Profile image updated successfully!");
+            }else{
+              alertify.error("Could not update the profile image");
+            }
+          }
+        });
+        
+    });
 
 });
 </script>
@@ -415,14 +457,15 @@ $(function() {
         data:"idUser=" + idUser,
         url:"../process/users/getUserData.php",
         success:function(r){
-          
           data=jQuery.parseJSON(r);
           $('#idUser').val(data['id_user']);
-          $('#idUpdatePassword').val(data['id_user']);
+          $('#idUpdatePassword').val(data['id_user']);  
+          $('#idUserImage').val(data['id_user']);
           $('#updateUserName').val(data['user_name']);
           $('#updateEmail').val(data['email']);
           $('#updateFullName').val(data['full_name']);
           $('#updateRole').val(data['user_role']);
+          $('#viewImage').prepend('<img class="img-thumbnail" id="imgp" src="' + data['imagePath'] + '"  width="200" height="200"/>');
           $('#updateStatus').val(data['status']);              
         }
       });
