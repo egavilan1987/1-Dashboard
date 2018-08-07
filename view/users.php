@@ -15,7 +15,7 @@
         <li class="breadcrumb-item active">Users</li>
       </ol>
       <a href="addUsers.php" class="btn btn-success" role="button" aria-pressed="true"><span class="fa fa-user-plus"></span> Add New User</a>
-      <a href="http://192.168.0.106:8080/callcenter/1-Dashboard/view/dompdf/printUsers.php" target="_blank" class="btn btn-primary" role="button" aria-pressed="true"><span class="fa fa-print"></span> Print Users</a>
+      <a href="http://192.168.0.106:8080/callcenter/1-Dashboard/view/fpdf/usersInf.php" target="_blank" class="btn btn-primary" role="button" aria-pressed="true"><span class="fa fa-print"></span> Print Users</a>
       <br>
       <br>
       <!-- DataUsers Card-->

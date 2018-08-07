@@ -46,13 +46,18 @@ p {
 tr:nth-child(even) {
     background-color: #dddddd;
 }
+
+
 </style>
     <div>
       <p>Users Information</p>
     </div> 
 <table>
 
-
+h2 {
+    background : url(img/EGD.jpg);
+}
+<h2></h2>
 	<tr>
 		<th>User Id</th>
 		<th>User name</th>
@@ -66,6 +71,7 @@ tr:nth-child(even) {
 while($row = mysqli_fetch_array($result))
 {
 	$output .= '
+    
 		<tr>
 			<td>'.$row["id_user"].'</td>
 			<td>'.$row["user_name"].'</td>
