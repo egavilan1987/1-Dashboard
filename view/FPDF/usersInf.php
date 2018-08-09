@@ -81,5 +81,5 @@ while($data=mysqli_fetch_array($query)){
 	$pdf->Cell(18,5,$data['status'],1,1);
 }
 
-$pdf->Output();
+$pdf->Output('I','Users Information.pdf');
 ?>

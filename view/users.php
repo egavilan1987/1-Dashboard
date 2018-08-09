@@ -47,11 +47,11 @@
               <button class="btn btn-secondary btn-xs" type="submit"><i class="fa fa-pencil-square-o"></i> Edit</button>        
             </form>
 
-            <form action="printUser.php" method="get">
+            <form action="http://192.168.0.106:8080/callcenter/1-Dashboard/view/fpdf/printUser.php" target="_blank" method="get">
               <input  type="text"  hidden="" id="idPrintUser" name="idPrintUser">
               <button class="btn btn-secondary btn-xs" type="submit"><i class="fa fa-print"></i> Print</button>
             </form>
-
+ 
 
 
 
