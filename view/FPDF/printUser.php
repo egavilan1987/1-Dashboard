@@ -41,7 +41,7 @@ $pdf->AddPage();
 $pdf->SetFont('Arial','',10);
 $pdf->SetDrawColor(0,0,0);
 
-$pdf->Ln(55);
+$pdf->Ln(60);
 
 
 $pdf->SetFont('Arial','B',12);
