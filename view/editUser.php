@@ -26,7 +26,7 @@
       <div class="col-md-3">
             <ul class="nav nav-pills nav-stacked admin-menu">            
                 <li class="active">
-                  <a href="#" class="btn btn-primary btn-ms" role="button" aria-pressed="true" data-target-id="profile"><i class="fa fa-cog" aria-hidden="true"></i>&nbsp;&nbsp;Profile Settings &nbsp;&nbsp;&nbsp;&nbsp;</a>
+                  <a href="#" class="btn btn-primary btn-ms" role="button" aria-pressed="true" data-target-id="profile"><i class="fa fa-cog" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;&nbsp;Profile Settings &nbsp;&nbsp;</a>
                 </li>
                 <br><br>
                 <li>
@@ -34,7 +34,7 @@
                 </li>
                 <br><br>
                 <li>
-                  <a href="#" class="btn btn-primary btn-ms" role="button" aria-pressed="true" data-target-id="profileImage"><i class="fa fa-picture-o" aria-hidden="true"></i> &nbsp;&nbsp;Profile Image&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                  <a href="#" class="btn btn-primary btn-ms" role="button" aria-pressed="true" data-target-id="profileImage"><i class="fa fa-picture-o" aria-hidden="true"></i> &nbsp;&nbsp;&nbsp;&nbsp;Profile Image&nbsp;&nbsp;&nbsp;&nbsp;</a>
                 </li>
             </ul>
         </div>

@@ -1,5 +1,6 @@
 <?php
-require('fpdf/fpdf.php');
+require_once ('../../vendor/fpdf/fpdf.php');
+
 $connection=mysqli_connect('localhost','root','');
 mysqli_select_db($connection,'administrator');
 
@@ -18,7 +19,7 @@ class PDF extends FPDF {
 	function Header(){
 		$this->SetFont('Arial','B',20);		
 		//put logo
-		$this->Image('img/EGD.jpg',15,15,15);
+		$this->Image('../../files/EGD.jpg',15,15,15);
 		$this->SetY(20);
 		$this->Cell(0,5,'User Information',0,0,'C');
 
@@ -26,13 +27,11 @@ class PDF extends FPDF {
 	}
 }
 
+$pdf = new PDF('P','mm','A4'); 
 
-$showImage=explode("/", $data['image']) ; 
-$imgPath=$showImage[1]."/".$showImage[2]."/".$showImage[3]."/".$showImage[4];
 
-$pdf = new PDF('P','mm','A4'); //use new class
+$pdf->SetTitle("User Information");
 
-//define new alias for total page numbers
 $pdf->AliasNbPages('{pages}');
 
 $pdf->SetAutoPageBreak(true,15);
@@ -47,8 +46,7 @@ $pdf->Ln(60);
 $pdf->SetFont('Arial','B',12);
 		
 $pdf->SetFillColor(255,255,255);
-//$pdf->Cell(190,5,$data['image'],0,1,'C',true);
-//$pdf->Cell(190,5,$imgPath,0,1,'C',true);
+
 
 
 $pdf->Image($data['image'],88,35,35);

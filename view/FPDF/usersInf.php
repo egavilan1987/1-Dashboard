@@ -1,5 +1,6 @@
 <?php
-require('fpdf/fpdf.php');
+require_once ('../../vendor/fpdf/fpdf.php');
+
 $connect=mysqli_connect('localhost','root','');
 mysqli_select_db($connect,'administrator');
 
@@ -8,19 +9,13 @@ class PDF extends FPDF {
 	function Header(){
 		$this->SetFont('Arial','B',15);
 		
-		//dummy cell to put logo
-		//$this->Cell(12,0,'',0,0);
-		//is equivalent to:
 		$this->Cell(12);
-		
+
 		//put logo
-		$this->Image('img/EGD.jpg',10,10,10);
+		$this->Image('../../files/EGD.jpg',10,10,10);
 		
 		$this->Cell(100,10,'Users List',0,1);
-		
-		//dummy cell to give line spacing
-		//$this->Cell(0,5,'',0,1);
-		//is equivalent to:
+
 		$this->Ln(5);
 		
 		$this->SetFont('Arial','B',12);
@@ -50,11 +45,9 @@ class PDF extends FPDF {
 }
 
 
-//A4 width : 219mm
-//default margin : 10mm each side
-//writable horizontal : 219-(10*2)=189mm
-
 $pdf = new PDF('P','mm','A4'); //use new class
+
+$pdf->SetTitle("Users Information");
 
 //define new alias for total page numbers
 $pdf->AliasNbPages('{pages}');

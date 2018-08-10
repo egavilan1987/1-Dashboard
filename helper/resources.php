@@ -42,3 +42,11 @@ id_user
 user_name
 password
 user_role 
+
+
+
+
+LOGIN
+https://www.tutorialrepublic.com/snippets/preview.php?topic=bootstrap&file=login-form-with-avatar-image
+https://www.tutorialrepublic.com/snippets/preview.php?topic=bootstrap&file=simple-login-form
+https://www.tutorialrepublic.com/snippets/preview.php?topic=bootstrap&file=elegant-modal-login-form-with-avatar-icon
