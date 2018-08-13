@@ -1,3 +1,7 @@
+<?php 
+  session_start();
+  if(isset($_SESSION['user'])){    
+ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,6 +21,7 @@
   <!-- Custom styles for this template-->
   <link href="../css/sb-admin.css" rel="stylesheet">
   <link href="../css/sb-admin.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="../css/dropdown-menu.css">
   <!-- Alertify-->
   <link rel="stylesheet" type="text/css" href="../vendor/alertifyjs/css/alertify.css">
   <link rel="stylesheet" type="text/css" href="../vendor/alertifyjs/css/themes/default.css">
@@ -51,18 +56,6 @@
             <span class="nav-link-text">Add New Users</span>
           </a>
         </li>
-        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tables">
-          <a class="nav-link" href="departments.php">
-            <i class="fa fa-building-o"></i>
-            <span class="nav-link-text">Departments</span>
-          </a>
-        </li>
-        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tables">
-          <a class="nav-link" href="#">
-            <i class="fa fa-gear"></i>
-            <span class="nav-link-text">Settings</span>
-          </a>
-        </li>
       </ul>
       <ul class="navbar-nav sidenav-toggler">
         <li class="nav-item">
@@ -72,21 +65,43 @@
         </li>
       </ul>
       <ul class="navbar-nav ml-auto">       
-        <!-- /.dropdown -->
-        <li class="nav-item dropdown"   >
-          <a class="nav-link dropdown-toggle mr-lg-2 " id="messagesDropdown" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
-            <i class="fa fa-user fa-fw"></i>
-            <span class="d-lg-none">Messages
-              <span class="badge badge-pill badge-primary">12 New</span>
-            </span>
-          </a>
-          <div class="dropdown-menu dropdown-menu-right text-right" aria-labelledby="messagesDropdown">
-            <a class="dropdown-item" href="index.php">User Profile<i class="fa fa-user fa-fw"></i></a>
-            <a class="dropdown-item" href="index.php">Settings<i class="fa fa-gear fa-fw"></i></a>            
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="index.php">Logout<i class="fa fa-sign-out fa-fw"></i></a>
-          </div>
-        </li>
+                <li class="dropdown">
+                    <a href="#" class="nav-link dropdown-toggle mr-lg-2 " data-toggle="dropdown"><img src="../files/profile_images/20180804_123928.jpg" class="rounded" width="25" height="25"> <?php echo $_SESSION['fullName']; ?>
+                        <span class="glyphicon glyphicon-chevron-down"></span>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-right">
+                        <li>
+                            <div class="navbar-login">
+                                <div class="row">
+                                    <div class="col-lg-4">
+                                        <p class="text-center">
+                                            <img src="../files/profile_images/20180804_123928.jpg" class="rounded" width="90" height="90"> 
+                                        </p>
+                                    </div>
+                                    <div class="col-lg-8">
+                                        <p class="text-center"><strong><?php echo $_SESSION['user']; ?></strong></p>
+                                        <p class="text-center small"><strong><?php echo $_SESSION['email']; ?></strong></p>
+                                        <p class="text-left">
+                                            <a href="editUser.php?idUser=85" class="btn btn-primary btn-block btn-sm">Update information</a>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <div class="navbar-login navbar-login-session">
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <p>
+                                            <a href="#" class="btn btn-danger btn-block" data-toggle="modal" data-target="#logoutModal">Close session</a>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
       </ul>
     </div>
   </nav>
@@ -104,7 +119,7 @@
       <i class="fa fa-angle-up"></i>
     </a>
     <!-- Logout Modal-->
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
@@ -116,7 +131,7 @@
           <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
           <div class="modal-footer">
             <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-            <a class="btn btn-primary" href="login.html">Logout</a>
+            <a class="btn btn-primary" href="../process/logout.php">Logout</a>
           </div>
         </div>
       </div>
@@ -142,6 +157,9 @@
   </div>
 </body>
 </html>
-
-<!--Javascrip code below -->        
+<?php 
+  }else{
+    header("location:../index.php");
+  }
+ ?>
 

@@ -54,7 +54,7 @@ $result=mysqli_query($connection,$sql);
               $imgPath=$showImage[1]."/".$showImage[2]."/".$showImage[3]."/".$showImage[4];
 
             ?>
-            <img class="rounded" alt="Cinque Terre" width="45" height="45" src="<?php echo $imgPath ?>">
+            <img class="rounded" width="45" height="45" src="<?php echo $imgPath ?>">
           </td>
           <td style="text-align: center;"><?php echo $row[2] ?></td>
           <td style="text-align: center;"><?php echo $row[3] ?></td>
