@@ -28,7 +28,7 @@
   <!-- Tab Icon-->
   <link rel="icon" href="../files/EGD.JPG">
 </head>
-<body>
+
 <body class="fixed-nav sticky-footer bg-dark" id="page-top">
   <!-- Navigation-->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
@@ -66,7 +66,7 @@
       </ul>
       <ul class="navbar-nav ml-auto">       
                 <li class="dropdown">
-                    <a href="#" class="nav-link dropdown-toggle mr-lg-2 " data-toggle="dropdown"><img src="../files/profile_images/20180804_123928.jpg" class="rounded" width="25" height="25"> <?php echo $_SESSION['fullName']; ?>
+                    <a href="#" class="nav-link dropdown-toggle mr-lg-2 " data-toggle="dropdown"><img src="<?php echo $_SESSION['imagePath']; ?>" class="rounded" width="25" height="25"> <?php echo $_SESSION['fullName']; ?>
                         <span class="glyphicon glyphicon-chevron-down"></span>
                     </a>
                     <ul class="dropdown-menu dropdown-menu-right">
@@ -75,7 +75,7 @@
                                 <div class="row">
                                     <div class="col-lg-4">
                                         <p class="text-center">
-                                            <img src="../files/profile_images/20180804_123928.jpg" class="rounded" width="90" height="90"> 
+                                            <img src="<?php echo $_SESSION['imagePath']; ?>" class="rounded" width="90" height="90"> 
                                         </p>
                                     </div>
                                     <div class="col-lg-8">

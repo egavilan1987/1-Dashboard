@@ -40,18 +40,18 @@
 					FROM users 
 				WHERE user_name='$inform[0]'
 				AND password='$password'";
+
 			$result=mysqli_query($connection,$sql);
 			$row=mysqli_fetch_row($result);
 
-				$_SESSION['testId']=$row[0];
+				$showImage=explode("/", $row[7]);
+				$imgPath=$showImage[1]."/".$showImage[2]."/".$showImage[3]."/".$showImage[4];
+
 				$_SESSION['email']=$row[2];
 				$_SESSION['fullName']=$row[3];
-				$_SESSION['imagePath']=$row[7];
+				$_SESSION['imagePath']=$imgPath;
 			
 			$row=mysqli_fetch_row($result);
-
-			//$showImage=explode("/", $row[6]) ; 
-            //$imgPath=$showImage[1]."/".$showImage[2]."/".$showImage[3]."/".$showImage[4];
 
 			if(mysqli_num_rows($result) > 0){
 				return 1;

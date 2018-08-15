@@ -408,8 +408,10 @@ $(function() {
               $('#viewImage').empty();
               $("#image").val("");
               addUser(idUser);
-
+              //load("menu.php");
               alertify.success("Profile image updated successfully!");
+              <?php $_SESSION['imagePath']="../files/EGD.jpg"; ?>
+              
             }else{
               alertify.error("Could not update the profile image");
             }
