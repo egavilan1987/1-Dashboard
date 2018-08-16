@@ -44,6 +44,9 @@
             <span class="nav-link-text">Dashboard</span>
           </a>
         </li>
+        <?php
+          if($_SESSION['role']=="Admin"):
+        ?>
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Menu Levels">
           <a class="nav-link" href="users.php">
             <i class="fa fa-fw fa-users"></i>
@@ -56,6 +59,10 @@
             <span class="nav-link-text">Add New Users</span>
           </a>
         </li>
+        <?php 
+          endif;
+        ?>
+
       </ul>
       <ul class="navbar-nav sidenav-toggler">
         <li class="nav-item">

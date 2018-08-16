@@ -50,12 +50,15 @@
 				$_SESSION['email']=$row[2];
 				$_SESSION['fullName']=$row[3];
 				$_SESSION['imagePath']=$imgPath;
+				$_SESSION['role']=$row[4];
+				$_SESSION['status']=$row[6];					
 			
-			$row=mysqli_fetch_row($result);
-
-			if(mysqli_num_rows($result) > 0){
+			if(mysqli_num_rows($result) > 0 AND $row[4]=='Admin' AND $row[6]=='Active'){
 				return 1;
-			}else{
+			}elseif(mysqli_num_rows($result) > 0 AND $row[4]=='User' AND $row[6]=='Active'){
+				return 1;
+			}
+			else{
 				return 0;
 			}
 		}

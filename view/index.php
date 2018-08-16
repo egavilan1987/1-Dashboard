@@ -16,6 +16,9 @@
         </li>
         <li class="breadcrumb-item active">My Dashboard</li>
       </ol>
+      <?php
+        if($_SESSION['role']=="Admin"):
+      ?>
       <!-- Icon Cards-->
       <div class="row">
         <div class="col-xl-3 col-sm-6 mb-3">
@@ -683,6 +686,9 @@
         <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
       </div>
     </div>
+    <?php 
+      endif;
+    ?>
     <!-- /.content-wrapper-->
     <footer class="sticky-footer">
       <div class="container">

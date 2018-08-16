@@ -117,7 +117,7 @@ $(function() {
             url:"process/regLogin/login.php",
             success:function(r){
             if(r==1){                
-                window.location="view/users.php";
+                window.location="view/index.php";
                 $('#frmLogin')[0].reset();
 
           }else{
