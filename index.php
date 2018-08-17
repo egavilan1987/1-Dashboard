@@ -19,33 +19,31 @@
 
 </head>
 <body>
-<div class="login-form">
-    <form id="frmLogin">
-        <div class="avatar">
-            <img src="https://www.tutorialrepublic.com/examples/images/avatar.png" alt="Avatar">
-        </div>
-        <h2 class="text-center">Member Login</h2>
-
-                <div id="alert_error_message" class="alert alert-danger alert-dismissible fade show" role="alert">
-                  <i class="fa fa-exclamation-triangle"></i> The username or password is incorrect.
-                  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
-                </div>
-
-        <div class="form-group">
-            <input type="text" class="form-control" id="user" name="user" placeholder="Username">
-            <div id="username_error_message" style="color:red"></div>
-        </div>
-        <div class="form-group">
-            <input type="password" class="form-control" id="password" name="password" placeholder="Password">
-            <div id="password_error_message" style="color:red"></div>
-        </div>        
-        <div>
-            <button type="button" id="loginBtn" class="btn btn-primary btn-lg btn-block">Sign in</button>
-        </div>
-    </form>
-</div>
+  <div class="login-form">
+      <form id="frmLogin">
+          <div class="avatar">
+              <img src="https://www.tutorialrepublic.com/examples/images/avatar.png" alt="Avatar">
+          </div>
+          <h2 class="text-center">Member Login</h2>
+            <div id="alert_error_message" class="alert alert-danger alert-dismissible fade show" role="alert">
+              <i class="fa fa-exclamation-triangle"></i> The username or password is incorrect.
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+          <div class="form-group">
+              <input type="text" class="form-control" id="user" name="user" placeholder="Username">
+              <div id="username_error_message" style="color:red"></div>
+          </div>
+          <div class="form-group">
+              <input type="password" class="form-control" id="password" name="password" placeholder="Password">
+              <div id="password_error_message" style="color:red"></div>
+          </div>        
+          <div>
+              <button type="button" id="loginBtn" class="btn btn-primary btn-lg btn-block">Sign in</button>
+          </div>
+      </form>
+  </div>
 </body>
 </html>      
 
@@ -62,30 +60,29 @@ $(function() {
       check_password();
     });
 
-    function check_username() {
-    
+function check_username() { 
+
     var username_length = $("#user").val().length;
-    
+
     if( $.trim( $('#user').val() ) == '' ){
-      $("#username_error_message").html("Input is blank!");
-      $("#username_error_message").show();
-      error_username = true;
-      user.style.border = "1px solid red";
+        $("#username_error_message").html("Input is blank!");
+        $("#username_error_message").show();
+        error_username = true;
+        user.style.border = "1px solid red";
       }else if(username_length < 5 || username_length > 20) {
-      $("#username_error_message").html("Should be between 5-20 characters");
-      $("#username_error_message").show();
-      error_username = true;
-      user.style.border = "1px solid red";
-      $("#username_error_message").show();
+        $("#username_error_message").html("Should be between 5-20 characters");
+        $("#username_error_message").show();
+        error_username = true;
+        user.style.border = "1px solid red";
+        $("#username_error_message").show();
       error_username = true;
       }else{
-      $("#username_error_message").hide();
-      user.style.border = "1px solid #ccc";
+        $("#username_error_message").hide();
+        user.style.border = "1px solid #ccc";
     }
-  
   }
 
-   function check_password() {
+function check_password() {
     
     var password_length = $("#password").val().length;
     
@@ -94,40 +91,37 @@ $(function() {
       $("#password_error_message").show();
       error_password = true;
       password.style.border = "1px solid red";
-    } else {
+    }else{
       $("#password_error_message").hide();
       password.style.border = "1px solid #ccc";
     }
   
   }
-  function login(){
-        error_username = false;
-        error_password = false;
+function login(){
+    error_username = false;
+    error_password = false;
 
-        check_username();
-        check_password();
+    check_username();
+    check_password();
 
     
-      if(error_username == false && error_password == false) {          
-          $("#alert_error_message").hide();
-          data=$('#frmLogin').serialize();
-          $.ajax({
-            type:"POST",
-            data:data,
-            url:"process/regLogin/login.php",
-            success:function(r){
-            if(r==1){                
-                window.location="view/index.php";
-                $('#frmLogin')[0].reset();
-
-          }else{
-                $("#alert_error_message").show();
-              }
+    if(error_username == false && error_password == false) {          
+        $("#alert_error_message").hide();
+        data=$('#frmLogin').serialize();
+        $.ajax({
+          type:"POST",
+          data:data,
+          url:"process/regLogin/login.php",
+          success:function(r){
+          if(r==1){                
+              window.location="view/init.php";                
+        }else{
+              $("#alert_error_message").show();
             }
-          });
-        }
+          }
+        });
+      }
     }
-
     $('#loginBtn').click(function(){
         login();
     });
@@ -138,11 +132,9 @@ $(function() {
     });
 });
 
-</script>
-
-<script type="text/javascript">
- $(document).ready(function(){
+$(document).ready(function(){
    $("#alert_error_message").hide();
+   $('#user').val("");
   });
 </script>                      
 

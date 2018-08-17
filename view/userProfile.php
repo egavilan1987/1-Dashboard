@@ -2,7 +2,7 @@
  <head>
   <title>Edit User</title>
   <?php require_once "menu.php"; 
-    $id = $_GET['idUser'];
+    $id = $_SESSION['iduser'];
   ?>
  </head>
  <body class="fixed-nav sticky-footer bg-dark" id="page-top">
@@ -13,12 +13,8 @@
         <li class="breadcrumb-item">
           <a href="init.php">Dashboard</a>
         </li>
-        <li class="breadcrumb-item">
-          <a href="users.php">Users</a>
-        </li>
-        <li class="breadcrumb-item active">Edit User</li>
+        <li class="breadcrumb-item active">User Profile</li>
       </ol>
-      <a href="users.php" class="btn btn-success" role="button" aria-pressed="true"><span class="fa fa-fw fa-users"></span>&nbsp;&nbsp;Users&nbsp;&nbsp;</a>
       <br>
       <br>
   <div class="container">
@@ -26,7 +22,7 @@
       <div class="col-md-3">
             <ul class="nav nav-pills nav-stacked admin-menu">            
                 <li class="active">
-                  <a href="#" class="btn btn-primary btn-ms" role="button" aria-pressed="true" data-target-id="profile"><i class="fa fa-cog" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;&nbsp;Profile Settings &nbsp;&nbsp;</a>
+                  <a href="#" class="btn btn-primary btn-ms" role="button" aria-pressed="true" data-target-id="profile"><i class="fa fa-id-card-o" aria-hidden="true"></i>&nbsp;&nbsp;User Information&nbsp;</a>
                 </li>
                 <br><br>
                 <li>
@@ -42,74 +38,38 @@
           <!-- Example DataUsers Card-->
         <div class="card mb-3">
         <div class="card-header">
-        <i class="fa fa-pencil"></i>  Edit User</div>
+        <i class="fa fa-id-card-o"></i>&nbsp;User Profile</div>
         <div class="card-body">       
           <div class="table-responsive">
            <div class="container">
             <!------ Include the above in your HEAD tag ---------->
            <div class="container">
                       <div class="row">
-                          <div class="col-md-12  toppad  offset-md-0 ">
-                            <div id="alert_error_message" class="alert alert-danger alert-dismissible fade show" role="alert">
-                               <i class="fa fa-exclamation-triangle"></i>
-                              <strong>Alert!</strong> Please check in on some of the fields below.
-                               <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                 <span aria-hidden="true">&times;</span>
-                               </button>
-                             </div>
-                          </div>
                           <div class="col-xs-12 col-sm-12 col-md-12" >
                             <form id="frmEditUser">
-                              <h2>Edit User</h2>
-
-                              <p style="color:red"><i>*Required</i></p>
+                              <h2>User Information</h2>
                               <div class="row">
                               </div>
                               <input type="text" hidden="" id="idUser" name="idUser">
                               <div class="form-group">
                                 <label>Username</label>
-                                <input type="text" name="updateUserName" id="updateUserName" class="form-control input-lg" placeholder="Username*">
+                                <input type="text" name="updateUserName" id="updateUserName" class="form-control input-lg" placeholder="Username*" disabled="disabled">
                                 <div id="username_error_message" style="color:red"></div>
                               </div>
 
                               <div class="form-group">
                                 <label>Email</label>
-                                <input type="text" name="updateEmail" id="updateEmail" class="form-control input-lg" placeholder="E-mail*">
+                                <input type="text" name="updateEmail" id="updateEmail" class="form-control input-lg" placeholder="E-mail*" disabled="disabled">
                                 <div id="email_error_message" style="color:red"></div>
                               </div> 
 
                               <div class="form-group">
                                 <label>Fullname</label>
-                                <input type="text" name="updateFullName" id="updateFullName" class="form-control input-lg" placeholder="Employee Name*">
+                                <input type="text" name="updateFullName" id="updateFullName" class="form-control input-lg" placeholder="Employee Name*" disabled="disabled">
                                 <div id="employee_error_message" style="color:red"></div>
                               </div>
-
-                              <div class="form-group">
-                                <label>Role</label>
-                                <select name="updateRole" id="updateRole" class="form-control">
-                                  <option value="" hidden>Role</option>
-                                  <option>Admin</option>
-                                  <option>User</option>
-                                </select>
-                                <div id="role_error_message" style="color:red"></div>
-                              </div>
-
-                              <div class="form-group">
-                                <label>Status</label>
-                                <select name="updateStatus" id="updateStatus" class="form-control">
-                                  <option value="" hidden>Status</option>
-                                  <option>Active</option>
-                                  <option>Inactive</option>
-                                </select>
-                                <div id="status_error_message" style="color:red"></div>
-                              </div>
-
-                                  <button type="button" id="btnCancel"  class="btn btn-danger">Cancel</button>
-                                  <button type="button" id="btnUpdateUser" class="btn btn-primary">Save</button>
                             </form>
                           </div>
-
-
                       </div>
                   </div>
                 </div>
@@ -141,6 +101,10 @@
                     <div class="row">
                       <div class="col-xs-12 col-sm-12 col-md-12">             
                         <input type="text" hidden="" id="idUpdatePassword" name="idUpdatePassword">
+                        <div class="form-group">
+                          <input type="oldPassword" name="oldPassword" id="oldPassword" class="form-control input-lg" placeholder="Old Password*">
+                          <div id="old_password_error_message" style="color:red"></div>
+                        </div>
                         <div class="form-group">
                           <input type="password" name="password" id="password" class="form-control input-lg" placeholder="New Password*">
                           <div id="password_error_message" style="color:red"></div>

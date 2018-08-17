@@ -13,7 +13,6 @@
 		$_POST['email'],
 		$_POST['employee'],
 		$_POST['role'],
-		$_POST['status'],
 		$pass,
 		$createdUser
 				);

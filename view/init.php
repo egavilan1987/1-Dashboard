@@ -12,7 +12,7 @@
       <!-- Breadcrumbs-->
       <ol class="breadcrumb">
         <li class="breadcrumb-item">
-          <a href="index.php">EGDashboard</a>
+          <a href="init.php">EGDashboard</a>
         </li>
         <li class="breadcrumb-item active">My Dashboard</li>
       </ol>

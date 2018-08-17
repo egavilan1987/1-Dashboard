@@ -53,9 +53,7 @@
 				$_SESSION['role']=$row[4];
 				$_SESSION['status']=$row[6];					
 			
-			if(mysqli_num_rows($result) > 0 AND $row[4]=='Admin' AND $row[6]=='Active'){
-				return 1;
-			}elseif(mysqli_num_rows($result) > 0 AND $row[4]=='User' AND $row[6]=='Active'){
+			if(mysqli_num_rows($result) > 0 AND $row[6]=='Active'){
 				return 1;
 			}
 			else{

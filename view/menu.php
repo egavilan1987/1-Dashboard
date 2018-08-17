@@ -32,14 +32,14 @@
 <body class="fixed-nav sticky-footer bg-dark" id="page-top">
   <!-- Navigation-->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
-    <a class="navbar-brand" href="index.php">EGDashboard</a>
+    <a class="navbar-brand" href="init.php">EGDashboard</a>
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
-          <a class="nav-link" href="index.php">
+          <a class="nav-link" href="init.php">
             <i class="fa fa-fw fa-dashboard"></i>
             <span class="nav-link-text">Dashboard</span>
           </a>
@@ -89,7 +89,7 @@
                                         <p class="text-center"><strong><?php echo $_SESSION['user']; ?></strong></p>
                                         <p class="text-center small"><strong><?php echo $_SESSION['email']; ?></strong></p>
                                         <p class="text-left">
-                                            <a href="editUser.php?idUser=85" class="btn btn-primary btn-block btn-sm">Update information</a>
+                                            <a href="userProfile.php" class="btn btn-primary btn-block btn-sm">Your profile</a>
                                         </p>
                                     </div>
                                 </div>
