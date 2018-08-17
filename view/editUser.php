@@ -172,6 +172,7 @@
             <div id="viewImage"></div>
               <div class="avatar-upload">
                 <input type="text" hidden="" id="idUserImage" name="idUserImage">
+                <?php $_SESSION['imagePath']="../files/EGD.jpg"; ?>
                 <br><br>
                 <input type="file" id="image" name="image">                                         
               </div>  
