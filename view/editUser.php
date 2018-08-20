@@ -50,7 +50,7 @@
            <div class="container">
                       <div class="row">
                           <div class="col-md-12  toppad  offset-md-0 ">
-                            <div id="alert_error_message" class="alert alert-danger alert-dismissible fade show" role="alert">
+                            <div id="alert_error_message" class="alert alert-danger collapse" role="alert">
                                <i class="fa fa-exclamation-triangle"></i>
                               <strong>Alert!</strong> Please check in on some of the fields below.
                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -103,13 +103,10 @@
                                 </select>
                                 <div id="status_error_message" style="color:red"></div>
                               </div>
-
                                   <button type="button" id="btnCancel"  class="btn btn-danger">Cancel</button>
                                   <button type="button" id="btnUpdateUser" class="btn btn-primary">Save</button>
                             </form>
                           </div>
-
-
                       </div>
                   </div>
                 </div>
@@ -126,17 +123,14 @@
             <div class="card-body">       
               <div class="table-responsive">
                 <div class="container">
-                  <form id="frmEditUserPassword">
-
-                    
+                  <form id="frmEditUserPassword">                    
                     <div id="alert_password_error_message" class="alert alert-danger alert-dismissible fade show" role="alert">
                       <i class="fa fa-exclamation-triangle"></i>
                       <strong>Alert!</strong> Please check in on some of the fields below.
                       <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                       </button>
-                    </div>
-                    
+                    </div>                    
                     <p style="color:red"><i>*Required</i></p>
                     <div class="row">
                       <div class="col-xs-12 col-sm-12 col-md-12">             
@@ -172,7 +166,7 @@
             <div id="viewImage"></div>
               <div class="avatar-upload">
                 <input type="text" hidden="" id="idUserImage" name="idUserImage">
-                <?php $_SESSION['imagePath']="../files/EGD.jpg"; ?>
+                <!-- <?php $_SESSION['imagePath']="../files/EGD.jpg"; ?>-->
                 <br><br>
                 <input type="file" id="image" name="image">                                         
               </div>  

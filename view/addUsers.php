@@ -30,7 +30,7 @@
               <form id="frmAddUsers">
                 <h2>Create New User</h2>
                 <hr class="colorgraph">
-                <div id="alert_error_message" class="alert alert-danger alert-dismissible fade show" role="alert">
+                <div id="alert_error_message" class="alert alert-danger collapse" role="alert">
                   <i class="fa fa-exclamation-triangle"></i>
                   <strong>Alert!</strong> Please check in on some of the fields below.
                   <button type="button" class="close" data-dismiss="alert" aria-label="Close">

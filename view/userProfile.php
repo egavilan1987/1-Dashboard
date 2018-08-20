@@ -1,7 +1,8 @@
 <html>
  <head>
   <title>Edit User</title>
-  <?php require_once "menu.php"; 
+  <?php require_once "menu.php";
+    require_once "../model/connection.php"; 
     $id = $_SESSION['iduser'];
   ?>
  </head>
@@ -86,23 +87,20 @@
             <div class="card-body">       
               <div class="table-responsive">
                 <div class="container">
-                  <form id="frmEditUserPassword">
-
-                    
+                  <form id="frmEditUserPassword">                    
                     <div id="alert_password_error_message" class="alert alert-danger alert-dismissible fade show" role="alert">
                       <i class="fa fa-exclamation-triangle"></i>
                       <strong>Alert!</strong> Please check in on some of the fields below.
                       <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                       </button>
-                    </div>
-                    
+                    </div>                    
                     <p style="color:red"><i>*Required</i></p>
                     <div class="row">
                       <div class="col-xs-12 col-sm-12 col-md-12">             
                         <input type="text" hidden="" id="idUpdatePassword" name="idUpdatePassword">
                         <div class="form-group">
-                          <input type="oldPassword" name="oldPassword" id="oldPassword" class="form-control input-lg" placeholder="Old Password*">
+                          <input type="password" name="oldPassword" id="oldPassword" class="form-control input-lg" placeholder="Old Password*">
                           <div id="old_password_error_message" style="color:red"></div>
                         </div>
                         <div class="form-group">
@@ -178,6 +176,9 @@ $(function() {
     $("#status").focusout(function() {
       check_status();
     });
+    $("#oldPassword").focusout(function() {
+      check_old_password();
+    });
     $("#password").focusout(function() {
       check_password();
     });
@@ -248,6 +249,37 @@ $(function() {
     }
   
   }
+   function check_old_password() {
+    
+    var password_length = $("#oldPassword").val().length;
+    
+    if(password_length < 8) {
+      $("#old_password_error_message").html("At least 8 characters!");
+      $("#old_password_error_message").show();
+      error_old_password = true;
+      oldPassword.style.border = "1px solid red";
+    }else if(password_length > 8){
+     oldPassword.style.border = "1px solid green";
+    $("#old_password_error_message").html("GOOD TO GO!");
+
+    <?php 
+      $c=new Connect();
+      $connection=$c->connection();
+
+      $sql="SELECT * FROM users WHERE id_user= $id"; 
+      $result=mysqli_query($connection,$sql);
+      $row=mysqli_fetch_row($result);
+
+      $oldPassword = sha1($row[5]); 
+      
+    ?>
+
+    }else {
+      $("#old_password_error_message").hide();
+      oldPassword.style.border = "1px solid #ccc";
+    }
+  
+  } 
    function check_password() {
     
     var password_length = $("#password").val().length;

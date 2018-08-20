@@ -38,53 +38,30 @@
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="usersModalLabel">User Information</h5>
-
           <span style="padding-left:150px;"></span>
-
-
             <form action="editUser.php" method="get">
               <input type="text"  hidden="" id="idUser" name="idUser">
               <button class="btn btn-secondary btn-xs" type="submit"><i class="fa fa-pencil-square-o"></i> Edit</button>        
             </form>
-
             <form action="http://192.168.0.106:8080/callcenter/1-Dashboard/view/fpdf/printUser.php" target="_blank" method="get">
               <input  type="text"  hidden="" id="idPrintUser" name="idPrintUser">
               <button class="btn btn-secondary btn-xs" type="submit"><i class="fa fa-print"></i> Print</button>
             </form>
- 
-
-
-
         </div>
         <div class="modal-body">
-                <div class="modal-body">
-                    <center>
-                      <!--
-                    <img src="../files/1.JPG" name="aboutme" width="140" height="140" border="0" class="img-thumbnail">
-                    <div id="imagePath"></div>
-                    -->
-                    <br>
-
-
-
-                    
-                    
-                      <div id="viewImage"></div>
-                    
-
-                    
-
-                    <div class="media-heading">
-                      <Strong ><h4>
-                        <div id="viewFullName"></div></h4>
-                      </Strong>
-                    </div>
-
+          <div class="modal-body">
+            <center>
+              <br>           
+                <div id="viewImage"></div>   
+                  <div class="media-heading">
+                    <Strong ><h4>
+                      <div id="viewFullName"></div></h4>
+                    </Strong>
+                  </div>
                     <font class="border border-danger" id="viewStatus"></font>
                     <div id="viewRole"></div>
                     <div id="viewUser"></div>
                     <div id="viewEmail"></div>
-
                     <hr>                    
                       <tr>
                         <Strong>
@@ -110,17 +87,16 @@
                         </Strong>
                         <div id="viewUpdatedDate"></div>
                       </tr>
-                      <br>
-                      <br>
-                    </center>                          
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <br><br>
+            </center>                          
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </div>
-   </div>
-    </div>
   <!--End User Detail Modal -->
 </body>
 </html>

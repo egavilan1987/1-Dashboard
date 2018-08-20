@@ -25,11 +25,8 @@
               <img src="https://www.tutorialrepublic.com/examples/images/avatar.png" alt="Avatar">
           </div>
           <h2 class="text-center">Member Login</h2>
-            <div id="alert_error_message" class="alert alert-danger alert-dismissible fade show" role="alert">
+            <div id="alert_error_message" class="alert alert-danger collapse" role="alert">
               <i class="fa fa-exclamation-triangle"></i> The username or password is incorrect.
-              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
             </div>
           <div class="form-group">
               <input type="text" class="form-control" id="user" name="user" placeholder="Username">
