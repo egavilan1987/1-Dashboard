@@ -156,7 +156,7 @@
 
 			
 			$sql="UPDATE users SET password='$data[1]',
-								   updated_by_user = 'adminUserExample',
+								   updated_by_user = '$data[2]',
 								   updated_date=NOW()
 						WHERE id_user='$data[0]'";
 
@@ -173,7 +173,28 @@
 					WHERE id_user='$idUser'";
 			return mysqli_query($connection,$sql);
 		}
+
+		public function checkPassword($data){
+			
+			$c=new Connect();
+			$connection=$c->connection();
+
+			$password=sha1($data[1]);
+
+			$sql="SELECT * FROM users 
+				WHERE id_user='$data[0]'";
+
+			$result=mysqli_query($connection,$sql);
+			$row=mysqli_fetch_row($result);
+
+			if($password != $row[5]){
+				return 1;
+			}
+			else{
+				return 0;
+			}
 	}
+}
  ?>
 
 

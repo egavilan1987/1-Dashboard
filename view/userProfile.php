@@ -2,7 +2,6 @@
  <head>
   <title>Edit User</title>
   <?php require_once "menu.php";
-    require_once "../model/connection.php"; 
     $id = $_SESSION['iduser'];
   ?>
  </head>
@@ -258,22 +257,24 @@ $(function() {
       $("#old_password_error_message").show();
       error_old_password = true;
       oldPassword.style.border = "1px solid red";
-    }else if(password_length > 8){
-     oldPassword.style.border = "1px solid green";
-    $("#old_password_error_message").html("GOOD TO GO!");
+        }else if(password_length > 7){ 
+          $.ajax({
+            type:"POST",
+            data: { oldPassword : $('#oldPassword').val()},
+            url:"../process/users/check_password.php",
+            success:function(r){
 
-    <?php 
-      $c=new Connect();
-      $connection=$c->connection();
-
-      $sql="SELECT * FROM users WHERE id_user= $id"; 
-      $result=mysqli_query($connection,$sql);
-      $row=mysqli_fetch_row($result);
-
-      $oldPassword = sha1($row[5]); 
-      
-    ?>
-
+            if(r==1){
+              $("#old_password_error_message").html("Invalid password.");
+              $("#old_password_error_message").show();
+              error_old_password = true;
+              oldPassword.style.border = "1px solid red";
+            }else{
+              $("#old_password_error_message").hide();
+              oldPassword.style.border = "1px solid #ccc";
+              }
+            }
+          });
     }else {
       $("#old_password_error_message").hide();
       oldPassword.style.border = "1px solid #ccc";
@@ -350,19 +351,23 @@ $(function() {
     });
 
       $('#btnSavePassword').click(function(){
+        
+        error_old_password = false;
         error_password = false;
         error_retype_password = false;
+        
+        check_old_password();
         check_password();
         check_password_confirmation();
 
-      if(error_password == false && error_retype_password == false) {          
+      if(error_old_password == false && error_password == false && error_retype_password == false) {          
           $("#alert_password_error_message").hide();
 
           data=$('#frmEditUserPassword').serialize();
           $.ajax({
             type:"POST",
             data:data,
-            url:"../process/users/updatePassword.php",
+            url:"../process/users/profileUpdatePassword.php",
             success:function(r){
             if(r==1){
               $('#frmEditUserPassword')[0].reset();
