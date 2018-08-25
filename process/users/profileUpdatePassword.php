@@ -6,15 +6,10 @@
 
 	$updatePassword=sha1($_POST['password']);
 
-	$updatePassword=sha1($_POST['password']);
-
 	$data=array(
 				$_SESSION['iduser'],
 				$updatePassword,
 				$_SESSION['user']			    
 				);  
 	echo $obj->updatePassword($data);
-	//print_r($data);
- 	//print_r($_POST);
- 	//print_r($_SESSION);
  ?>

@@ -5,16 +5,12 @@
 	$obj= new users;
 
 	$updatePassword=sha1($_POST['password']);
-	$createdUser="Example User";
 
-	$userPassword=array(
+
+	$data=array(
 				$_POST['idUpdatePassword'],
-			    $updatePassword
+			    $updatePassword,
+			    $_SESSION['user']
 				);  
-	echo $obj->updatePassword($userPassword);
+	echo $obj->updatePassword($data);
  ?>
-
-
-
-
-

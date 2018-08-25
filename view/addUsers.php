@@ -252,7 +252,7 @@ $(function() {
           $.ajax({
             type:"POST",
             data:data,
-            url:"../process/regLogin/registerUser.php",
+            url:"../process/users/registerUser.php",
             success:function(r){
             if(r==1){
               $('#frmAddUsers')[0].reset();

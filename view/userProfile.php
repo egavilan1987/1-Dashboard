@@ -385,10 +385,20 @@ $(function() {
         }
     });
       $('#btnCancelPassword').click(function(){
-        alertify.confirm('Cancel User Information Updating.','Do you want to cancel user information updating?', function(){
-         window.location.replace("users.php");
-        }, function(){ 
+        alertify.confirm('Cancel the Password Updating.','Do you want to cancel the password update?', function(){
+          $('#frmEditUserPassword')[0].reset();
+          $("#alert_password_error_message").hide();
+
+          $("#old_password_error_message").hide();
+          oldPassword.style.border = "1px solid #ccc";
+          $("#password_error_message").hide();
+          password.style.border = "1px solid #ccc";
+          $("#password_confirmation_error_message").hide();
+          password_confirmation.style.border = "1px solid #ccc"; 
+          
           alertify.success("Operation Canceled!");
+        }, function(){
+          alertify.error('Canceled!');          
         });
     });
       $('#btnSaveImage').click(function(){

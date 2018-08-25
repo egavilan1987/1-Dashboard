@@ -380,7 +380,7 @@ $(function() {
     });
       $('#btnCancelPassword').click(function(){
         alertify.confirm('Cancel User Information Updating.','Do you want to cancel user information updating?', function(){
-         window.location.replace("users.php");
+        $('#frmEditUserPassword')[0].reset();
         }, function(){ 
           alertify.success("Operation Canceled!");
         });
